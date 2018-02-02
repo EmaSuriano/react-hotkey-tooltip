@@ -4,7 +4,12 @@
   "description": "react-hotkey-tooltip React component",
   "main": "lib/index.js",
   "module": "es/index.js",
-  "files": ["css", "es", "lib", "umd"],
+  "files": [
+    "css",
+    "es",
+    "lib",
+    "umd"
+  ],
   "scripts": {
     "build": "nwb build-react-component",
     "clean": "nwb clean-module && nwb clean-demo",
@@ -20,11 +25,15 @@
   "devDependencies": {
     "nwb": "0.21.x",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "react-mousetrap": "^0.2.0",
+    "react-tippy": "^1.2.2"
   },
   "author": "",
   "homepage": "",
   "license": "MIT",
   "repository": "",
-  "keywords": ["react-component"]
+  "keywords": [
+    "react-component"
+  ]
 }
