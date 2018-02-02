@@ -23,10 +23,12 @@
     "react": "16.x"
   },
   "devDependencies": {
+    "mousetrap": "^1.6.1",
     "nwb": "0.21.x",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-mousetrap": "^0.2.0",
+    "react-proptypes": "^1.0.0",
     "react-tippy": "^1.2.2"
   },
   "author": "",

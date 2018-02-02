@@ -1,18 +1,33 @@
 import React, { Component } from 'react';
+import PropTypes from 'react-proptypes';
 import mouseTrap from './react-mousetrap';
 import ReactDOM from 'react-dom';
 import { Tooltip } from 'react-tippy';
 import 'react-tippy/dist/tippy.css';
+import MouseTrap from 'mousetrap';
 
 const questionsHandlers = {
   show: [],
   hide: [],
 };
 
-const callHandlers = prop => () =>
-  questionsHandlers[prop].forEach(func => func());
+const tooltipList = {};
+
+const callHandlers = showTooltip => () =>
+  tooltipList.forEach(func => func(showTooltip));
 
 class ShorcutWrapper extends Component {
+  static propTypes = {
+    shortcut: PropTypes.string.isRequired,
+    onShortcutPressed: PropTypes.func.isRequired,
+    showTooltipShortcut: PropTypes.string,
+    children: PropTypes.node.isRequired,
+  };
+
+  static defaultProps = {
+    showTooltipShortcut: 'x',
+  };
+
   state = {
     showTooltip: false,
   };
@@ -21,17 +36,34 @@ class ShorcutWrapper extends Component {
     // questionsHandlers.push('asdasdasd');
     // console.log(questionsHandlers);
     // window.addEventListener('keydown', this.handleHelpKey, false);
-    questionsHandlers.show.push(this.showTooltip);
-    questionsHandlers.hide.push(this.hideTooltip);
-    this.props.bindShortcut('x', callHandlers('show'), 'keydown');
-    this.props.bindShortcut('x', callHandlers('hide'), 'keyup');
+    // questionsHandlers.show.push(this.showTooltip);
+    // questionsHandlers.hide.push(this.hideTooltip);
+    tooltipList.push(this.setShowTooltip);
 
-    this.props.bindShortcut(this.props.shortcut, this.focusComponent);
+    MouseTrap.bind(
+      this.props.showTooltipShortcut,
+      callHandlers(true),
+      'keydown',
+    );
+    MouseTrap.bind(
+      this.props.showTooltipShortcut,
+      callHandlers(false),
+      'keyup',
+    );
+    // this.props.bindShortcut('x', callHandlers('show'), 'keydown');
+    // this.props.bindShortcut('x', callHandlers('hide'), 'keyup');
+
+    // this.props.bindShortcut(this.props.shortcut, this.focusComponent);
+    MouseTrap.bind(this.props.shortcut, this.focusComponent);
   }
 
-  // componentWillUnmount() {
-  //   document.removeEventListener('keydown', this.handleHelpKey, false);
-  // }
+  componentWillUnmount() {
+    const index = tooltipList.indexOf(key);
+
+    if (index > -1) {
+      tooltipList.splice(index, 1);
+    }
+  }
 
   // handleHelpKey = event => {
   //   console.log(event);
@@ -41,13 +73,16 @@ class ShorcutWrapper extends Component {
   //   }
   // };
 
-  showTooltip = () =>
-    !this.state.showTooltip && this.setState({ showTooltip: true });
+  setShowTooltip = showTooltip =>
+    this.state.showTooltip !== showTooltip && this.setState({ showTooltip });
 
-  hideTooltip = () => {
-    console.log('asdasd');
-    this.setState({ showTooltip: false });
-  };
+  // showTooltip = () =>
+  //   !this.state.showTooltip && this.setState({ showTooltip: true });
+
+  // hideTooltip = () => {
+  //   console.log('asdasd');
+  //   this.setState({ showTooltip: false });
+  // };
 
   focusComponent = event => {
     const isFocus =
