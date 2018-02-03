@@ -38,7 +38,7 @@ class ShorcutWrapper extends Component {
     // window.addEventListener('keydown', this.handleHelpKey, false);
     // questionsHandlers.show.push(this.showTooltip);
     // questionsHandlers.hide.push(this.hideTooltip);
-    tooltipList.push(this.setShowTooltip);
+    if (tooltipList) tooltipList.push(this.setShowTooltip);
 
     MouseTrap.bind(
       this.props.showTooltipShortcut,
