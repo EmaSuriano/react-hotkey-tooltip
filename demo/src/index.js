@@ -4,12 +4,17 @@ import Menu from './Menu1';
 import Example from '../../src';
 
 class Demo extends Component {
+  state = {
+    showMenu: true,
+  };
+
+  toggleMenu = () => this.setState({ showMenu: !this.state.showMenu });
+
   render() {
     return (
       <div>
-        <h1>react-hotkey-tooltip Demo</h1>
-        <Example />
-        <Menu />
+        <button onClick={this.toggleMenu}>Toggle</button>
+        {this.state.showMenu && <Menu />}
       </div>
     );
   }

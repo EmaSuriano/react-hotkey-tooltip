@@ -29,7 +29,8 @@
     "react-dom": "^16.2.0",
     "react-mousetrap": "^0.2.0",
     "react-proptypes": "^1.0.0",
-    "react-tippy": "^1.2.2"
+    "react-tippy": "^1.2.2",
+    "styled-components": "^3.1.2"
   },
   "author": "",
   "homepage": "",
