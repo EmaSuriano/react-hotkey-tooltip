@@ -21,8 +21,8 @@ export default class Menu1 extends Component {
           ullamco in ullamco nostrud non officia culpa. Occaecat veniam est
         </p>
         <HotkeyWrapper
-          shortcut="a"
-          onShortcutPressed={() => this.button1.focus()}
+          hotkey="a"
+          onHotkeyPressed={() => this.button1.focus()}
           disableTooltip
         >
           <button
@@ -34,8 +34,8 @@ export default class Menu1 extends Component {
         </HotkeyWrapper>
 
         <HotkeyWrapper
-          shortcut="s"
-          onShortcutPressed={() => this.complexButton.focus()}
+          hotkey="s"
+          onHotkeyPressed="focus"
           tooltipProps={{
             arrow: false,
             theme: 'light',
@@ -43,18 +43,17 @@ export default class Menu1 extends Component {
         >
           <ComplexButton
             onClick={() => console.log('Clicking complex button')}
-            ref={c => (this.complexButton = c)}
           />
         </HotkeyWrapper>
-        <HotkeyWrapper shortcut="p" onShortcutPressed="focus">
+        <HotkeyWrapper hotkey="p" onHotkeyPressed="focus">
           <HighlightableText />
         </HotkeyWrapper>
-        <HotkeyWrapper shortcut="b" onShortcutPressed="focus">
+        <HotkeyWrapper hotkey="b" onHotkeyPressed="focus">
           <button onClick={() => console.log('click button 2')}>
             Button 2
           </button>
         </HotkeyWrapper>
-        <HotkeyWrapper shortcut="i" onShortcutPressed="focus">
+        <HotkeyWrapper hotkey="i" onHotkeyPressed="focus">
           <input type="text" />
         </HotkeyWrapper>
         <p>

@@ -8,8 +8,8 @@ import 'react-tippy/dist/tippy.css';
 
 class HotkeyWrapper extends Component {
   static propTypes = {
-    shortcut: PropTypes.string.isRequired,
-    onShortcutPressed: PropTypes.oneOfType([PropTypes.func, PropTypes.string])
+    hotkey: PropTypes.string.isRequired,
+    onHotkeyPressed: PropTypes.oneOfType([PropTypes.func, PropTypes.string])
       .isRequired,
     children: PropTypes.element.isRequired,
     tooltipHotkey: PropTypes.string,
@@ -21,7 +21,9 @@ class HotkeyWrapper extends Component {
     tooltipHotkey: '?',
     tooltipProps: {
       arrow: true,
+      position: 'bottom',
     },
+    disableTooltip: false,
   };
 
   state = {
@@ -32,30 +34,30 @@ class HotkeyWrapper extends Component {
     if (!this.props.disableTooltip)
       addNewTooltipHelp(this.props.tooltipHotkey, this.setShowTooltip);
 
-    MouseTrap.bind(this.props.shortcut, this.onShortcutPressed);
+    MouseTrap.bind(this.props.hotkey, this.onHotkeyPressed);
   }
 
   componentWillUnmount() {
     if (!this.props.disableTooltip)
       removeToolTipHelp(this.props.tooltipHotkey, this.setShowTooltip);
 
-    MouseTrap.unbind(this.props.shortcut);
+    MouseTrap.unbind(this.props.hotkey);
   }
 
-  onShortcutPressed = event => {
+  onHotkeyPressed = event => {
     try {
-      if (typeof this.props.onShortcutPressed === 'function')
-        return this.props.onShortcutPressed(event);
+      if (typeof this.props.onHotkeyPressed === 'function')
+        return this.props.onHotkeyPressed(event);
 
-      if (this.props.onShortcutPressed === 'focus') {
+      if (this.props.onHotkeyPressed === 'focus') {
         const isFocus =
           document.activeElement === ReactDOM.findDOMNode(this.component);
         if (!isFocus) event.preventDefault();
       }
 
-      return this.component[this.props.onShortcutPressed](event);
+      return this.component[this.props.onHotkeyPressed](event);
     } catch (err) {
-      console.error('onShortcutPressed does not exist', err);
+      console.error('onHotkeyPressed does not exist', err);
     }
   };
 
@@ -64,18 +66,19 @@ class HotkeyWrapper extends Component {
 
   render() {
     const children =
-      typeof this.props.onShortcutPressed === 'function'
+      typeof this.props.onHotkeyPressed === 'function'
         ? this.props.children
         : React.cloneElement(this.props.children, {
             ref: node => (this.component = node),
           });
 
-    return (
+    return this.props.disableTooltip ? (
+      children
+    ) : (
       <Tooltip
-        title={this.props.shortcut.toUpperCase()}
-        position="bottom"
-        trigger="manual"
+        title={this.props.hotkey.toUpperCase()}
         open={this.state.showTooltip}
+        trigger="manual"
         multiple
         {...this.props.tooltipProps}
       >
