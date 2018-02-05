@@ -1,12 +1,11 @@
 # react-hotkey-tooltip
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/EmaSuriano/react-hotkey-tooltip.svg)](https://greenkeeper.io/)
+[![Travis badge][build-badge]][build]
+[![npm package badge][npm-badge]][npm]
+[![Coveralls badge][coveralls-badge]][coveralls]
 
-[![Travis][build-badge]][build]
-[![npm package][npm-badge]][npm]
-[![Coverage Status][coveralls-badge]][coveralls]
-
-TODO: add readme please.
+TODO: add readme please.. new version!
 
 [build-badge]: https://img.shields.io/travis/EmaSuriano/react-hotkey-tooltip.svg
 [build]: https://travis-ci.org/EmaSuriano/react-hotkey-tooltip

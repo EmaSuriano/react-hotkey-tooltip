@@ -13,7 +13,7 @@ describe('<HotkeyWraper />', () => {
   beforeEach(() => {
     hotkeyWraper = shallow(
       <HotkeyWraper hotkey="a" onHotkeyPressed={onHotkeyPressed}>
-        <p>aslkdjalksd</p>
+        <p>Inner children</p>
       </HotkeyWraper>,
     );
   });
