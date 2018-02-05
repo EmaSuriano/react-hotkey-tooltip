@@ -1,15 +1,11 @@
 {
   "name": "react-hotkey-tooltip",
-  "version": "1.0.2",
-  "description": "React component that creates hotkeys for your components and shows a tooltip of it",
+  "version": "0.0.0-development",
+  "description":
+    "React component that creates hotkeys for your components and shows a tooltip of it",
   "main": "lib/index.js",
   "module": "es/index.js",
-  "files": [
-    "css",
-    "es",
-    "lib",
-    "umd"
-  ],
+  "files": ["css", "es", "lib", "umd"],
   "scripts": {
     "build": "nwb build-react-component",
     "clean": "nwb clean-module && nwb clean-demo",
@@ -18,7 +14,8 @@
     "test:coverage": "nwb test-react --coverage",
     "test:watch": "nwb test-react --server",
     "deploy": "gh-pages -d demo/dist",
-    "release": "standard-version"
+    "travis-deploy-once": "travis-deploy-once",
+    "semantic-release": "semantic-release"
   },
   "dependencies": {},
   "peerDependencies": {
@@ -35,8 +32,9 @@
     "react-mousetrap": "^0.2.0",
     "react-proptypes": "^1.0.0",
     "react-tippy": "^1.2.2",
-    "standard-version": "^4.3.0",
-    "styled-components": "^3.1.2"
+    "styled-components": "^3.1.2",
+    "travis-deploy-once": "^4.3.4",
+    "semantic-release": "^12.4.1"
   },
   "author": {
     "name": "Emanuel Suriano",
@@ -46,10 +44,5 @@
   "homepage": "https://emasuriano.github.io/react-hotkey-tooltip",
   "license": "MIT",
   "repository": "https://github.com/EmaSuriano/react-hotkey-tooltip",
-  "keywords": [
-    "react-component",
-    "hotkey",
-    "tooltip",
-    "shortcut"
-  ]
+  "keywords": ["react-component", "hotkey", "tooltip", "shortcut"]
 }
