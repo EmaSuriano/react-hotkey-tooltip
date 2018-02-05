@@ -5,9 +5,14 @@ cache:
 notifications:
   email: false
 node_js:
-  - '9'
+  - 8
+before_install:
+  - npm install codecov.io coveralls
 after_success:
   - npm run travis-deploy-once "npm run semantic-release"
+  - cat ./coverage/lcov.info | ./node_modules/codecov.io/bin/codecov.io.js
+  - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
 branches:
-  except:
-    - /^v\d+\.\d+\.\d+$/
+  only:
+  - master
+  - "/^greenkeeper/.*$/"
