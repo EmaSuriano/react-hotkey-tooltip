@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import Demo from './Demo';
+// import Demo from './Demo';
+import Menu from './Menu1';
+import './Demo.css';
 
 class Demo extends Component {
   state = {
@@ -11,9 +13,12 @@ class Demo extends Component {
 
   render() {
     return (
-      <div>
-        <button onClick={this.toggleMenu}>Toggle</button>
-        {this.state.showMenu && <Menu />}
+      <div className="main-container">
+        <h1>react-hotkey-tooltip</h1>
+        <div className="container">
+          <button onClick={this.toggleMenu}>Toggle</button>
+          {this.state.showMenu && <Menu />}
+        </div>
       </div>
     );
   }
