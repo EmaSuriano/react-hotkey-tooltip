@@ -4,7 +4,7 @@
 [![npm package][npm-badge]][npm]
 [![Coverage Status][coveralls-badge]][coveralls]
 
-Describe react-hotkey-tooltip here.
+TODO: add readme please.
 
 [build-badge]: https://img.shields.io/travis/EmaSuriano/react-hotkey-tooltip.svg
 [build]: https://travis-ci.org/EmaSuriano/react-hotkey-tooltip
