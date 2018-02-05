@@ -1,17 +1,18 @@
 sudo: false
-
 language: node_js
 node_js:
-  - 8
-
+- 8
 before_install:
-  - npm install codecov.io coveralls
-
+- npm install codecov.io coveralls
 after_success:
-  - cat ./coverage/lcov.info | ./node_modules/codecov.io/bin/codecov.io.js
-  - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
-
+- cat ./coverage/lcov.info | ./node_modules/codecov.io/bin/codecov.io.js
+- cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
 branches:
   only:
-    - master
-    - /^greenkeeper/.*$/
+  - master
+  - "/^greenkeeper/.*$/"
+deploy:
+  api_key:
+    secure: q8+n3qRgfXCXmQjLZ/YDqcVOToybliJciRalIVP7Ydxe75p016ISxQzFmFryDq2IMH62sC4Vdl1ptlOF29koNlbGvOmr+xHsaHkVkl3cW4E268quO/NcfQ5lfCxGJB09+VLPCNGaNJH4CBYApPtRozpF+rTcctvCh0BPzmy4hRGPIidPV675dg0/wY1KOqLpC4v7VKGjmM7AePLej4tMmUj7MVuyLoT3mf4HExdnK8/IucjApGn8zcxKbqblMo6oHMabDqE/YuStcgKosiXJBWFjmR6ckJmBNWUeB6iGq6mOsUHBfxkprncfYDsEM8ZT4eMXXJVtS8lYxUIR6H8ZBixSVSlMcyhhKIrGyVALKSscv7X6+f+sUS2j/DYWD0yNi/jNH8UajcsbgJYDAK3Krh3qTjV5CAdctV86RBmW1gGArFuseWAcWzsZ0K1ESydA+GRWYFt/RlHOoAMAfVy9wYlUao4pY5lbUwa+mpWrrppkUFI4xqoLXoU/0DCJcr+AgG6jXjUiff62NSXu+UEWGK6qw4KXvgw/l8LH0ZbOjjvzKpEXd3zjZbaeQyCCY0LWobpVE5cYrA7bcY0Fg1ICiMU6ZNclnXcTfUdPpeicW8P38SkJgw1KmHMmozDLWJGvzq3rUn3xtxz6bYPZFFJAGrd1KWyA6z3p4sEgyZnEoDI=
+    email: emanuel.suriano@gmail.com
+    provider: npm
