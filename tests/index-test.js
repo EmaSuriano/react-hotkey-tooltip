@@ -1,23 +1,24 @@
-import expect from 'expect'
-import React from 'react'
-import {render, unmountComponentAtNode} from 'react-dom'
+import expect from 'expect';
+import React from 'react';
+import { shallow, configure } from 'enzyme';
+import HotkeyWraper from '../src';
+import Adapter from 'enzyme-adapter-react-16';
 
-import Component from 'src/'
+configure({ adapter: new Adapter() });
 
-describe('Component', () => {
-  let node
+describe('<HotkeyWraper />', () => {
+  let hotkeyWraper;
+  let onHotkeyPressed = () => console.log('asdasd');
 
   beforeEach(() => {
-    node = document.createElement('div')
-  })
+    hotkeyWraper = shallow(
+      <HotkeyWraper hotkey="a" onHotkeyPressed={onHotkeyPressed}>
+        <p>aslkdjalksd</p>
+      </HotkeyWraper>,
+    );
+  });
 
-  afterEach(() => {
-    unmountComponentAtNode(node)
-  })
-
-  it('displays a welcome message', () => {
-    render(<Component/>, node, () => {
-      expect(node.innerHTML).toContain('Welcome to React components')
-    })
-  })
-})
+  it('should render something!', () => {
+    expect(hotkeyWraper.exists()).toBe(true);
+  });
+});

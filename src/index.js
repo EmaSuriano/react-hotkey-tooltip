@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import HotkeyWrapper from './HotkeyWrapper';
 
 export default class extends Component {
   render() {
@@ -9,3 +9,4 @@ export default class extends Component {
     );
   }
 }
+export default HotkeyWrapper;
