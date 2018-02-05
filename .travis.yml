@@ -12,6 +12,7 @@ after_success:
   - npm run travis-deploy-once "npm run semantic-release"
   - cat ./coverage/lcov.info | ./node_modules/codecov.io/bin/codecov.io.js
   - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+  - npm run deploy-gh
 branches:
   only:
   - master

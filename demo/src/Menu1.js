@@ -7,6 +7,7 @@ export default class Menu1 extends Component {
   render() {
     return (
       <div className="Home">
+        <p>Successfully deploy!</p>
         <p>
           Duis exercitation officia consectetur et id sint consectetur. Non
           proident ut eu reprehenderit enim et. Sunt laborum consectetur
