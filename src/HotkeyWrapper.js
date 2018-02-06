@@ -44,22 +44,18 @@ class HotkeyWrapper extends Component {
     this.state.showTooltip !== showTooltip && this.setState({ showTooltip });
 
   render() {
-    const children =
-      typeof this.props.onHotkeyPressed === 'function'
-        ? this.props.children
-        : React.cloneElement(this.props.children, {
-            ref: node => (this.component = node),
-          });
+    const { children, hotkey, tooltipProps, disableTooltip } = this.props;
+    const { showTooltip } = this.state;
 
-    return this.props.disableTooltip ? (
+    return disableTooltip ? (
       children
     ) : (
       <Tooltip
-        title={this.props.hotkey.toUpperCase()}
-        open={this.state.showTooltip}
+        title={hotkey.toUpperCase()}
+        open={showTooltip}
         trigger="manual"
         multiple
-        {...this.props.tooltipProps}
+        {...tooltipProps}
       >
         {children}
       </Tooltip>
