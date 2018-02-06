@@ -19,10 +19,17 @@
     "test:watch": "nwb test-react --server",
     "deploy-gh": "gh-pages -d demo/dist",
     "travis-deploy-once": "travis-deploy-once",
-    "semantic-release": "semantic-release",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "prepublish": "npm run build",
+    "semantic-release":
+      "semantic-release pre && npm publish && semantic-release pos"
   },
-  "dependencies": {},
+  "dependencies": {
+    "mousetrap": "^1.6.1",
+    "react-tippy": "^1.2.2",
+    "react-proptypes": "^1.0.0",
+    "react-dom": "^16.2.0"    
+  },
   "peerDependencies": {
     "react": "16.x"
   },
@@ -31,14 +38,10 @@
     "cz-conventional-changelog": "^2.1.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "fd-slicer": "^1.0.1",
     "gh-pages": "^1.1.0",
-    "mousetrap": "^1.6.1",
     "nwb": "0.21.x",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "react-mousetrap": "^0.2.0",
-    "react-proptypes": "^1.0.0",
-    "react-tippy": "^1.2.2",
     "semantic-release": "^12.4.1",
     "styled-components": "^3.1.2",
     "travis-deploy-once": "^4.3.4"
