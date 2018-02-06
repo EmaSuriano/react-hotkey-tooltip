@@ -5,7 +5,7 @@
 [![npm package badge][npm-badge]][npm]
 [![Coveralls badge][coveralls-badge]][coveralls]
 
-TODO: add readme please.. new version!
+TODO: add readme please.. new version 2!
 
 [build-badge]: https://img.shields.io/travis/EmaSuriano/react-hotkey-tooltip.svg
 [build]: https://travis-ci.org/EmaSuriano/react-hotkey-tooltip
