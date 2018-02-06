@@ -3,7 +3,6 @@ import PropTypes from 'react-proptypes';
 import { Tooltip } from 'react-tippy';
 import MouseTrap from 'mousetrap';
 import { addNewTooltipHelp, removeToolTipHelp } from './helpTooltipHandler';
-import 'react-tippy/dist/tippy.css';
 
 class HotkeyWrapper extends Component {
   static propTypes = {
@@ -18,7 +17,6 @@ class HotkeyWrapper extends Component {
   static defaultProps = {
     tooltipHotkey: '?',
     tooltipProps: {
-      arrow: true,
       position: 'bottom',
     },
     disableTooltip: false,

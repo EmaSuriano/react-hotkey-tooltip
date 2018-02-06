@@ -10,9 +10,9 @@
     "build": "nwb build-react-component",
     "clean": "nwb clean-module && nwb clean-demo",
     "start": "nwb serve-react-demo",
-    "test": "nwb test-react",
-    "test:coverage": "nwb test-react --coverage",
-    "test:watch": "nwb test-react --server",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
     "deploy-gh": "gh-pages -d demo/dist",
     "travis-deploy-once": "travis-deploy-once",
     "commit": "git-cz",
@@ -21,8 +21,9 @@
   },
   "dependencies": {
     "mousetrap": "^1.6.1",
-    "react-tippy": "^1.2.2",
-    "react-proptypes": "^1.0.0"
+    "raf": "^3.4.0",
+    "react-proptypes": "^1.0.0",
+    "react-tippy": "^1.2.2"
   },
   "peerDependencies": {
     "react": "16.x"
@@ -39,12 +40,23 @@
     "semantic-release": "^12.4.1",
     "styled-components": "^3.1.2",
     "react-dom": "^16.2.0",
-    "travis-deploy-once": "^4.3.4"
+    "travis-deploy-once": "^4.3.4",
+    "babel-jest": "^20.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "jest": "^20.0.0",
+    "react-test-renderer": "^15.5.4"
   },
   "author": {
     "name": "Emanuel Suriano",
     "email": "emanuel.suriano@gmail.com",
     "url": "http://emasuriano.github.com/"
+  },
+  "jest": {
+    "setupFiles": ["raf/polyfill", "<rootDir>/test-setup.js"],
+    "transform": {
+      "^.+\\.js$": "<rootDir>/jest.transform.js"
+    }
   },
   "homepage": "https://emasuriano.github.io/react-hotkey-tooltip",
   "license": "MIT",
