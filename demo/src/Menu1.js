@@ -19,6 +19,7 @@ export default class Menu1 extends Component {
         <HotkeyWrapper hotkey="b" onHotkeyPressed="focus">
           <button onClick={() => console.log('click button 2')}>Button 2</button>
         </HotkeyWrapper>
+        
         <HotkeyWrapper hotkey="i" onHotkeyPressed="focus">
           <input type="text" />
         </HotkeyWrapper>

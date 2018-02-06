@@ -1,17 +1,25 @@
 language: node_js
+
 cache:
   directories:
     - ~/.npm
+    - node_modules
+
 notifications:
   email: false
+
 node_js:
   - 8
+
 before_install:
-  - npm install codecov.io coveralls
+  - npm i -g npm@^2.0.0
+  - npm install coveralls
+
 after_success:
-  - npm run travis-deploy-once "npm run semantic-release"
-  - cat ./coverage/lcov.info | ./node_modules/codecov.io/bin/codecov.io.js
+  - npm run build
   - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+  - npm run travis-deploy-once "npm run semantic-release"
+
 branches:
   only:
   - master

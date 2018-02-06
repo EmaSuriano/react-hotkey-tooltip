@@ -1,11 +1,15 @@
 {
   "name": "react-hotkey-tooltip",
   "version": "0.0.0-development",
-  "description":
-    "React component that creates hotkeys for your components and shows a tooltip of it",
+  "description": "React component that creates hotkeys for your components and shows a tooltip of it",
   "main": "lib/index.js",
   "module": "es/index.js",
-  "files": ["css", "es", "lib", "umd"],
+  "files": [
+    "css",
+    "es",
+    "lib",
+    "umd"
+  ],
   "scripts": {
     "build": "nwb build-react-component",
     "clean": "nwb clean-module && nwb clean-demo",
@@ -15,13 +19,15 @@
     "test:watch": "nwb test-react --server",
     "deploy-gh": "gh-pages -d demo/dist",
     "travis-deploy-once": "travis-deploy-once",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "commit": "git-cz"
   },
   "dependencies": {},
   "peerDependencies": {
     "react": "16.x"
   },
   "devDependencies": {
+    "commitizen": "^2.9.6",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "gh-pages": "^1.1.0",
@@ -32,9 +38,9 @@
     "react-mousetrap": "^0.2.0",
     "react-proptypes": "^1.0.0",
     "react-tippy": "^1.2.2",
+    "semantic-release": "^12.4.1",
     "styled-components": "^3.1.2",
-    "travis-deploy-once": "^4.3.4",
-    "semantic-release": "^12.4.1"
+    "travis-deploy-once": "^4.3.4"
   },
   "author": {
     "name": "Emanuel Suriano",
@@ -44,5 +50,10 @@
   "homepage": "https://emasuriano.github.io/react-hotkey-tooltip",
   "license": "MIT",
   "repository": "https://github.com/EmaSuriano/react-hotkey-tooltip",
-  "keywords": ["react-component", "hotkey", "tooltip", "shortcut"]
+  "keywords": [
+    "react-component",
+    "hotkey",
+    "tooltip",
+    "shortcut"
+  ]
 }
