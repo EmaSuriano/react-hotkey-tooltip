@@ -1,32 +1,30 @@
 import MouseTrap from 'mousetrap';
 
-const tooltipList = {};
+const hotkeysTooltip = {};
 
-const addNewTooltipHelp = (hotkey, showTooltip) => {
-  if (!tooltipList[hotkey]) {
-    tooltipList[hotkey] = [];
+const addNewTooltipHelp = (hotkey, showTooltipFunc) => {
+  if (!hotkeysTooltip[hotkey]) {
+    hotkeysTooltip[hotkey] = [];
     MouseTrap.bind(hotkey, callHandlers(hotkey, true), 'keydown');
     MouseTrap.bind(hotkey, callHandlers(hotkey, false), 'keyup');
   }
 
-  tooltipList[hotkey].push(showTooltip);
+  hotkeysTooltip[hotkey].push(showTooltipFunc);
 };
 
-const removeToolTipHelp = (hotkey, showTooltip) => {
-  const index = tooltipList[hotkey].indexOf(showTooltip);
+const removeToolTipHelp = (hotkey, showTooltipFunc) => {
+  const index = hotkeysTooltip[hotkey].indexOf(showTooltipFunc);
 
   if (index > -1) {
-    tooltipList[hotkey].splice(index, 1);
+    hotkeysTooltip[hotkey].splice(index, 1);
   }
 };
 
 const callHandlers = (hotkey, showTooltip) => () => {
-  const tooltips = tooltipList[hotkey];
+  const tooltips = hotkeysTooltip[hotkey];
   if (!tooltips) return console.error('No tooltip help define for that key');
 
   tooltips.forEach(func => func(showTooltip));
 };
 
 export { addNewTooltipHelp, removeToolTipHelp };
-
-export default { addNewTooltipHelp, removeToolTipHelp };
