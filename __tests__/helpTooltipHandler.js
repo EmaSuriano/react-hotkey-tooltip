@@ -1,63 +1,24 @@
-function mapToArray(map) {
-  return Object.keys(map).map(k => map[k]);
-}
+import {
+  addNewTooltipHelp,
+  removeToolTipHelp,
+} from '../src/helpTooltipHandler';
+import MouseTrap from 'mousetrap';
 
-function mapObject(object, fn) {
-  return mapToArray(object).map(fn);
-}
+jest.mock('mousetrap', () => ({
+  bind: jest.fn(),
+  unbind: jest.fn(),
+}));
 
-describe('NWB Semantic Release', () => {
-  describe('mapToArray', () => {
-    it('should create an array from a map', () => {
-      expect(
-        mapToArray({
-          one: { name: 'something' },
-          two: { name: 'something else' },
-        }).length,
-      ).toBe(2);
-      expect(
-        mapToArray({
-          one: { name: 'something' },
-          two: { name: 'something else' },
-          three: { name: 'something else' },
-        })[2].name,
-      ).toContain('something else');
-    });
+describe('helpTooltipHandler', () => {
+  describe('addNewTooltipHelp', () => {
+    it('should bind hotkey with MouseTrap when hotkey does not exists inside hotkeysTooltip', () => {});
+
+    it('should add showTooltip function to hotkeysTooltip when hotkey exists inside hotkeysTooltip', () => {});
   });
-  describe('mapObject', () => {
-    it('should map an object using callable', () => {
-      expect(
-        mapObject(
-          {
-            one: { name: 'something' },
-            two: { name: 'something else' },
-            three: { name: 'something something' },
-          },
-          object => object.name,
-        ).length,
-      ).toBe(3);
 
-      expect(
-        mapObject(
-          {
-            one: { name: 'something' },
-            two: { name: 'something else' },
-            three: { name: 'something something' },
-          },
-          object => object.name,
-        )[0],
-      ).toBe('something');
+  describe('removeTooltipHelp', () => {
+    it('should remove showTooltip function from hotkeysTooltip if it exists', () => {});
 
-      expect(
-        mapObject(
-          {
-            one: { name: 'something' },
-            two: { name: 'something else' },
-            three: { name: 'something something' },
-          },
-          object => object.name,
-        )[2],
-      ).toBe('something something');
-    });
+    it('should not change hotkeysTooltip when showTooltip function does not exists in it', () => {});
   });
 });
