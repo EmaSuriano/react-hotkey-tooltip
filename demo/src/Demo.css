@@ -10,7 +10,24 @@ body {
   max-width: 800px;
   text-align: center;
 }
+
+h1 {
+  color: white;
+}
+
 .container {
   border-radius: 25px;
   background: #ffffff;
+}
+
+.home {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem 2rem;
+}
+
+.home > * {
+  margin: 10px;
 }

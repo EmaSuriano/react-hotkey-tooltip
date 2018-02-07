@@ -1,16 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'react-proptypes';
-import ReactDOM from 'react-dom';
 import { Tooltip } from 'react-tippy';
-import MouseTrap from 'mousetrap';
+import { bind, unbind } from 'mousetrap';
 import { addNewTooltipHelp, removeToolTipHelp } from './helpTooltipHandler';
-import 'react-tippy/dist/tippy.css';
 
 class HotkeyWrapper extends Component {
   static propTypes = {
     hotkey: PropTypes.string.isRequired,
-    onHotkeyPressed: PropTypes.oneOfType([PropTypes.func, PropTypes.string])
-      .isRequired,
+    onHotkeyPressed: PropTypes.func.isRequired,
     children: PropTypes.element.isRequired,
     tooltipHotkey: PropTypes.string,
     tooltipProps: PropTypes.object,
@@ -20,8 +17,8 @@ class HotkeyWrapper extends Component {
   static defaultProps = {
     tooltipHotkey: '?',
     tooltipProps: {
-      arrow: true,
       position: 'bottom',
+      arrow: true,
     },
     disableTooltip: false,
   };
@@ -31,56 +28,37 @@ class HotkeyWrapper extends Component {
   };
 
   componentDidMount() {
-    if (!this.props.disableTooltip)
+    if (!this.props.disableTooltip) {
       addNewTooltipHelp(this.props.tooltipHotkey, this.setShowTooltip);
+    }
 
-    MouseTrap.bind(this.props.hotkey, this.onHotkeyPressed);
+    bind(this.props.hotkey, this.props.onHotkeyPressed);
   }
 
   componentWillUnmount() {
-    if (!this.props.disableTooltip)
+    if (!this.props.disableTooltip) {
       removeToolTipHelp(this.props.tooltipHotkey, this.setShowTooltip);
-
-    MouseTrap.unbind(this.props.hotkey);
-  }
-
-  onHotkeyPressed = event => {
-    try {
-      if (typeof this.props.onHotkeyPressed === 'function')
-        return this.props.onHotkeyPressed(event);
-
-      if (this.props.onHotkeyPressed === 'focus') {
-        const isFocus =
-          document.activeElement === ReactDOM.findDOMNode(this.component);
-        if (!isFocus) event.preventDefault();
-      }
-
-      return this.component[this.props.onHotkeyPressed](event);
-    } catch (err) {
-      console.error('onHotkeyPressed does not exist', err);
     }
-  };
+
+    unbind(this.props.hotkey);
+  }
 
   setShowTooltip = showTooltip =>
     this.state.showTooltip !== showTooltip && this.setState({ showTooltip });
 
   render() {
-    const children =
-      typeof this.props.onHotkeyPressed === 'function'
-        ? this.props.children
-        : React.cloneElement(this.props.children, {
-            ref: node => (this.component = node),
-          });
+    const { children, hotkey, tooltipProps, disableTooltip } = this.props;
+    const { showTooltip } = this.state;
 
-    return this.props.disableTooltip ? (
+    return disableTooltip ? (
       children
     ) : (
       <Tooltip
-        title={this.props.hotkey.toUpperCase()}
-        open={this.state.showTooltip}
+        title={hotkey.toUpperCase()}
+        open={showTooltip}
         trigger="manual"
         multiple
-        {...this.props.tooltipProps}
+        {...tooltipProps}
       >
         {children}
       </Tooltip>
