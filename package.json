@@ -57,7 +57,8 @@
     "setupFiles": ["raf/polyfill", "<rootDir>/test-setup.js"],
     "transform": {
       "^.+\\.js$": "<rootDir>/jest.transform.js"
-    }
+    },
+    "moduleDirectories": ["node_modules"]
   },
   "homepage": "https://emasuriano.github.io/react-hotkey-tooltip",
   "license": "MIT",

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'react-proptypes';
 import { Tooltip } from 'react-tippy';
-import MouseTrap from 'mousetrap';
+import { bind, unbind } from 'mousetrap';
 import { addNewTooltipHelp, removeToolTipHelp } from './helpTooltipHandler';
 
 class HotkeyWrapper extends Component {
@@ -18,6 +18,7 @@ class HotkeyWrapper extends Component {
     tooltipHotkey: '?',
     tooltipProps: {
       position: 'bottom',
+      arrow: true,
     },
     disableTooltip: false,
   };
@@ -27,17 +28,19 @@ class HotkeyWrapper extends Component {
   };
 
   componentDidMount() {
-    if (!this.props.disableTooltip)
+    if (!this.props.disableTooltip) {
       addNewTooltipHelp(this.props.tooltipHotkey, this.setShowTooltip);
+    }
 
-    MouseTrap.bind(this.props.hotkey, this.props.onHotkeyPressed);
+    bind(this.props.hotkey, this.props.onHotkeyPressed);
   }
 
   componentWillUnmount() {
-    if (!this.props.disableTooltip)
+    if (!this.props.disableTooltip) {
       removeToolTipHelp(this.props.tooltipHotkey, this.setShowTooltip);
+    }
 
-    MouseTrap.unbind(this.props.hotkey);
+    unbind(this.props.hotkey);
   }
 
   setShowTooltip = showTooltip =>

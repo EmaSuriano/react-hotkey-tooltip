@@ -28,3 +28,5 @@ const callHandlers = (hotkey, showTooltip) => () => {
 };
 
 export { addNewTooltipHelp, removeToolTipHelp };
+
+export default { addNewTooltipHelp, removeToolTipHelp };
