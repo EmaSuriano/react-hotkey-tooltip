@@ -7,13 +7,12 @@ node_js:
   - 8
 
 before_install:
-  - npm install -g npm@'>=3.5.1'
-
-after_script:
-  - npm install coveralls && cat ./coverage/lcov.info | coveralls
+  - npm install -g npm
+  - npm install coveralls
 
 after_success:
   - npm run build
+  - npm install coveralls && cat ./coverage/lcov.info | coveralls
   - npm run travis-deploy-once "npm run semantic-release"
 
 branches:
