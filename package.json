@@ -11,7 +11,7 @@
     "clean": "nwb clean-module && nwb clean-demo",
     "start": "nwb serve-react-demo",
     "test": "jest --coverage",
-    "test:watch": "jest --watch",
+    "test:watch": "jest",
     "test:coverage": "jest --coverage",
     "deploy-gh": "gh-pages -d demo/dist",
     "travis-deploy-once": "travis-deploy-once",

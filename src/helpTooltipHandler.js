@@ -20,11 +20,7 @@ const removeToolTipHelp = (hotkey, showTooltipFunc) => {
   }
 };
 
-const callHandlers = (hotkey, showTooltip) => () => {
-  const tooltips = hotkeysTooltip[hotkey];
-  if (!tooltips) return console.error('No tooltip help define for that key');
-
-  tooltips.forEach(func => func(showTooltip));
-};
+const callHandlers = (hotkey, showTooltip) => () =>
+  hotkeysTooltip[hotkey].forEach(func => func(showTooltip));
 
 export { addNewTooltipHelp, removeToolTipHelp };
