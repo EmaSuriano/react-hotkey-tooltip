@@ -1,15 +1,15 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import MouseTrap from 'mousetrap';
-import HotkeyWraper from '../src/HotkeyWrapper';
-import helpTooltipHandler from '../src/helpTooltipHandler';
+import HotkeyWraper from '../HotkeyWrapper';
+import helpTooltipHandler from '../helpTooltipHandler';
 
 jest.mock('mousetrap', () => ({
   bind: jest.fn(),
   unbind: jest.fn(),
 }));
 
-jest.mock('../src/helpTooltipHandler', () => ({
+jest.mock('../helpTooltipHandler', () => ({
   addNewTooltipHelp: jest.fn(),
   removeToolTipHelp: jest.fn(),
 }));

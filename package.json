@@ -59,7 +59,12 @@
     "transform": {
       "^.+\\.js$": "<rootDir>/jest.transform.js"
     },
-    "moduleDirectories": ["node_modules"]
+    "moduleDirectories": ["node_modules"],
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!**/setupTests.js",
+      "!src/index.js"
+    ]
   },
   "homepage": "https://emasuriano.github.io/react-hotkey-tooltip",
   "license": "MIT",
