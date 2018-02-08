@@ -1,10 +1,5 @@
 language: node_js
 
-cache:
-  directories:
-    - ~/.npm
-    - node_modules
-
 notifications:
   email: false
 
@@ -12,12 +7,13 @@ node_js:
   - 8
 
 before_install:
-  - npm i -g npm@^2.0.0
-  - npm install coveralls
+  - npm install -g npm@'>=3.5.1'
+
+after_script:
+  - npm install coveralls && cat ./coverage/lcov.info | coveralls
 
 after_success:
   - npm run build
-  - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
   - npm run travis-deploy-once "npm run semantic-release"
 
 branches:
