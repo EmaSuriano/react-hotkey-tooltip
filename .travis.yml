@@ -13,7 +13,7 @@ before_install:
 
 after_success:
   - npm install coveralls && cat ./coverage/lcov.info | coveralls
-  - npm run travis-deploy-once "npm run semantic-release"
+  - npm run travis-deploy-once "npm run semantic-release-ema"
 
 branches:
   only:

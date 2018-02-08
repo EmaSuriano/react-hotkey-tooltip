@@ -1,6 +1,6 @@
 {
   "name": "react-hotkey-tooltip",
-  "version": "1.3.0",
+  "version": "0.0.0-development",
   "description":
     "React component that creates hotkeys for your components and shows a tooltip of it",
   "main": "lib/index.js",
@@ -19,6 +19,7 @@
     "prepublish": "npm run build",
     "semantic-release":
       "semantic-release pre && npm publish && semantic-release pos",
+    "semantic-release-ema": "semantic-release",
     "debug": "node --debug-brk --inspect ./node_modules/.bin/jest -i"
   },
   "dependencies": {
