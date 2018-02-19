@@ -6,10 +6,10 @@ import { ocean } from 'react-syntax-highlighter/styles/hljs';
 const FocusableButton = () => (
   <HotkeyWrapper
     hotkey="b"
-    onHotkeyPressed={() => this.button1.focus()}
+    onHotkeyPressed={() => this.button.focus()}
     tooltipHotkey="h"
   >
-    <button onClick={() => console.log('click!')} ref={c => (this.button1 = c)}>
+    <button onClick={() => console.log('click!')} ref={c => (this.button = c)}>
       FocusableButton
     </button>
   </HotkeyWrapper>
@@ -21,10 +21,10 @@ const InActionCode = ` import React from 'react';
   const FocusableButton = () => (
     <HotkeyWrapper
       hotkey="b"
-      onHotkeyPressed={() => this.button1.focus()}
+      onHotkeyPressed={() => this.button.focus()}
       tooltipHotkey="h"
     >
-      <button onClick={() => console.log('click!')} ref={c => (this.button1 = c)}>
+      <button onClick={() => console.log('click!')} ref={c => (this.button = c)}>
         FocusableButton
       </button>
     </HotkeyWrapper>

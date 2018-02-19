@@ -1,21 +1,17 @@
 {
   "name": "react-hotkey-tooltip",
   "version": "0.0.0-development",
-  "description": "React component that creates hotkeys for your components and shows a tooltip of it",
+  "description":
+    "React component that creates hotkeys for your components and shows a tooltip of it",
   "main": "lib/index.js",
   "module": "es/index.js",
-  "files": [
-    "css",
-    "es",
-    "lib",
-    "umd"
-  ],
+  "files": ["css", "es", "lib", "umd"],
   "scripts": {
     "build": "nwb build-react-component",
     "clean": "nwb clean-module && nwb clean-demo",
     "start": "nwb serve-react-demo",
-    "test": "jest",
-    "test:watch": "jest",
+    "test": "jest  --coverage",
+    "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "deploy-gh": "gh-pages -d demo/dist",
     "travis-deploy-once": "travis-deploy-once",
@@ -61,16 +57,11 @@
     "url": "http://emasuriano.github.com/"
   },
   "jest": {
-    "setupFiles": [
-      "raf/polyfill",
-      "<rootDir>/test-setup.js"
-    ],
+    "setupFiles": ["raf/polyfill", "<rootDir>/test-setup.js"],
     "transform": {
       "^.+\\.js$": "<rootDir>/jest.transform.js"
     },
-    "moduleDirectories": [
-      "node_modules"
-    ],
+    "moduleDirectories": ["node_modules"],
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}",
       "!**/setupTests.js",
@@ -80,12 +71,7 @@
   "homepage": "https://emasuriano.github.io/react-hotkey-tooltip",
   "license": "MIT",
   "repository": "https://github.com/EmaSuriano/react-hotkey-tooltip",
-  "keywords": [
-    "react-component",
-    "hotkey",
-    "tooltip",
-    "shortcut"
-  ],
+  "keywords": ["react-component", "hotkey", "tooltip", "shortcut"],
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
