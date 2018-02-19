@@ -1,15 +1,15 @@
 import React from 'react';
 
-const WhyYouShouldUseIt = () => (
+const WhyShouldIUseIt = () => (
   <section>
-    <h2>Why you should use it?</h2>
+    <h2>Why should you use it?</h2>
     <p>
       When working with hotkeys in a React application we will find many
       problems when trying to implement it:
     </p>
     <ul>
       <li>
-        Hotkeys are only accesible inside a specific component (not globally).
+        Hotkeys are only accessible inside a specific component (not globally).
       </li>
       <li>Must take care of the hotkeys manually throughout the life cycle.</li>
       <li>
@@ -24,4 +24,4 @@ const WhyYouShouldUseIt = () => (
   </section>
 );
 
-export default WhyYouShouldUseIt;
+export default WhyShouldIUseIt;

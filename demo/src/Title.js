@@ -16,11 +16,9 @@ const Title = () => {
           arrow: true,
         }}
       >
-        <h1 ref={c => (this.title = c)} tabIndex="0">
-          React Hotkey Tooltip
-        </h1>
+        <h1>React Hotkey Tooltip</h1>
       </HotkeyWrapper>
-      <h2>A global Hotkey provider with built in tooltip for React</h2>
+      <h2>A global Hotkey provider with built-in tooltip for React</h2>
     </header>
   );
 };

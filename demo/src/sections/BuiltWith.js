@@ -6,7 +6,7 @@ const BuiltWith = () => (
     <h2>Built with</h2>
     <p>
       Why mess up with document.addEventListener or positioning/styling tooltips
-      if there are a lot of open source libraries that can do that for me. This
+      if there are a lot of open source libraries that can do that for me. Those
       are the chosen ones!
     </p>
     <ul>

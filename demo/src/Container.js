@@ -1,7 +1,7 @@
 import HotkeyWrapper from '../../src';
 import React, { Component } from 'react';
 import {
-  WhyYouShouldUseIt,
+  WhyShouldIUseIt,
   BuiltWith,
   Installation,
   InAction,
@@ -11,7 +11,7 @@ import {
 
 const Container = () => (
   <div className="container">
-    <WhyYouShouldUseIt />
+    <WhyShouldIUseIt />
     <BuiltWith />
     <Installation />
     <InAction />
