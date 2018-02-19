@@ -1,11 +1,15 @@
 {
   "name": "react-hotkey-tooltip",
   "version": "0.0.0-development",
-  "description":
-    "React component that creates hotkeys for your components and shows a tooltip of it",
+  "description": "React component that creates hotkeys for your components and shows a tooltip of it",
   "main": "lib/index.js",
   "module": "es/index.js",
-  "files": ["css", "es", "lib", "umd"],
+  "files": [
+    "css",
+    "es",
+    "lib",
+    "umd"
+  ],
   "scripts": {
     "build": "nwb build-react-component",
     "clean": "nwb clean-module && nwb clean-demo",
@@ -40,12 +44,16 @@
     "gh-pages": "^1.1.0",
     "jest": "^20.0.0",
     "nwb": "0.21.x",
+    "nwb-sass": "^0.8.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-github-corner": "^2.1.0",
+    "react-syntax-highlighter": "^7.0.0",
     "react-test-renderer": "^15.5.4",
     "semantic-release": "^12.4.1",
     "styled-components": "^3.1.6",
-    "travis-deploy-once": "^4.3.4"
+    "travis-deploy-once": "^4.3.4",
+    "webfontloader": "^1.6.28"
   },
   "author": {
     "name": "Emanuel Suriano",
@@ -53,11 +61,16 @@
     "url": "http://emasuriano.github.com/"
   },
   "jest": {
-    "setupFiles": ["raf/polyfill", "<rootDir>/test-setup.js"],
+    "setupFiles": [
+      "raf/polyfill",
+      "<rootDir>/test-setup.js"
+    ],
     "transform": {
       "^.+\\.js$": "<rootDir>/jest.transform.js"
     },
-    "moduleDirectories": ["node_modules"],
+    "moduleDirectories": [
+      "node_modules"
+    ],
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}",
       "!**/setupTests.js",
@@ -67,7 +80,12 @@
   "homepage": "https://emasuriano.github.io/react-hotkey-tooltip",
   "license": "MIT",
   "repository": "https://github.com/EmaSuriano/react-hotkey-tooltip",
-  "keywords": ["react-component", "hotkey", "tooltip", "shortcut"],
+  "keywords": [
+    "react-component",
+    "hotkey",
+    "tooltip",
+    "shortcut"
+  ],
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"

@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import Menu from './Menu1';
+import Container from './Container';
+import Title from './Title';
+import Footer from './Footer';
+import GithubLink from './GithubLink';
 import './Demo.css';
 
 export default class Demo extends Component {
@@ -12,13 +15,12 @@ export default class Demo extends Component {
 
   render() {
     return (
-      <div className="main-container">
-        <h1>react-hotkey-tooltip</h1>
-        <div className="container">
-          <button onClick={this.toggleMenu}>Toggle</button>
-          {this.state.showMenu && <Menu />}
-        </div>
-      </div>
+      <React.Fragment>
+        <Title />
+        <Container />
+        <Footer />
+        <GithubLink />
+      </React.Fragment>
     );
   }
 }

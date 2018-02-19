@@ -27,20 +27,59 @@ class HotkeyWrapper extends Component {
     showTooltip: false,
   };
 
-  componentDidMount() {
-    if (!this.props.disableTooltip) {
-      addNewTooltipHelp(this.props.tooltipHotkey, this.setShowTooltip);
+  componentWillReceiveProps(nextProps) {
+    const {
+      disableTooltip,
+      hotkey,
+      onHotkeyPressed,
+      tooltipHotkey,
+    } = this.props;
+
+    if (nextProps.disableTooltip !== disableTooltip) {
+      if (nextProps.disableTooltip) {
+        removeToolTipHelp(nextProps.tooltipHotkey, this.setShowTooltip);
+      } else {
+        addNewTooltipHelp(nextProps.tooltipHotkey, this.setShowTooltip);
+      }
     }
 
-    bind(this.props.hotkey, this.props.onHotkeyPressed);
+    if (
+      !nextProps.disableTooltip &&
+      nextProps.tooltipHotkey !== tooltipHotkey
+    ) {
+      removeToolTipHelp(tooltipHotkey, this.setShowTooltip);
+      addNewTooltipHelp(nextProps.tooltipHotkey, this.setShowTooltip);
+    }
+
+    if (nextProps.hotkey !== hotkey) {
+      unbind(hotkey);
+      bind(nextProps.hotkey, onHotkeyPressed);
+    }
+  }
+
+  componentDidMount() {
+    const {
+      disableTooltip,
+      hotkey,
+      onHotkeyPressed,
+      tooltipHotkey,
+    } = this.props;
+
+    if (!disableTooltip) {
+      addNewTooltipHelp(tooltipHotkey, this.setShowTooltip);
+    }
+
+    bind(hotkey, onHotkeyPressed);
   }
 
   componentWillUnmount() {
-    if (!this.props.disableTooltip) {
-      removeToolTipHelp(this.props.tooltipHotkey, this.setShowTooltip);
+    const { disableTooltip, hotkey, tooltipHotkey } = this.props;
+
+    if (!disableTooltip) {
+      removeToolTipHelp(tooltipHotkey, this.setShowTooltip);
     }
 
-    unbind(this.props.hotkey);
+    unbind(hotkey);
   }
 
   setShowTooltip = showTooltip =>
