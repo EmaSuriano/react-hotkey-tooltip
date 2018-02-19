@@ -87,14 +87,11 @@ header > h2 {
   box-shadow: 0 0 20px 7px rgba(63, 63, 63, 0.4);
 }
 
-.container > section > pre code {
-  padding: 10px;
-}
-
 footer {
   text-align: end;
   width: 100%;
   margin-right: 20px;
+  color: var(--white);
 }
 
 @media (max-width: 600px) {
@@ -103,5 +100,10 @@ footer {
     border-radius: 0px;
     margin: 0;
     padding: 0;
+  }
+
+  .container > section > pre {
+    padding: 0px;
+    border-radius: 0px;
   }
 }

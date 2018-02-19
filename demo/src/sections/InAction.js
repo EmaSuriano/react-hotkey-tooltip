@@ -15,20 +15,20 @@ const FocusableButton = () => (
   </HotkeyWrapper>
 );
 
-const InActionCode = ` import React from 'react';
-  import HotkeyWrapper from 'lib';
+const InActionCode = `import React from 'react';
+import HotkeyWrapper from 'react-hotkey-wrapper';
 
-  const FocusableButton = () => (
-    <HotkeyWrapper
-      hotkey="b"
-      onHotkeyPressed={() => this.button.focus()}
-      tooltipHotkey="h"
-    >
-      <button onClick={() => console.log('click!')} ref={c => (this.button = c)}>
-        FocusableButton
-      </button>
-    </HotkeyWrapper>
-  );`;
+const FocusableButton = () => (
+  <HotkeyWrapper
+    hotkey="b"
+    onHotkeyPressed={() => this.button.focus()}
+    tooltipHotkey="h"
+  >
+    <button onClick={() => console.log('click!')} ref={c => (this.button = c)}>
+      FocusableButton
+    </button>
+  </HotkeyWrapper>
+);`;
 
 const InAction = () => (
   <section>
