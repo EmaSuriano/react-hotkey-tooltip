@@ -38,7 +38,7 @@ Why mess up with document.addEventListener or positioning/styling tooltips if th
 
 ```javascript
 import React from 'react';
-import HotkeyWrapper from 'lib';
+import HotkeyWrapper from 'react-hotkey-wrapper';
 
 const FocusableButton = () => (
   <HotkeyWrapper
