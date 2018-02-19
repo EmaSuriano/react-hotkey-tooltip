@@ -133,7 +133,7 @@ describe('<HotkeyWraper />', () => {
         expect(MouseTrap.unbind).toHaveBeenCalledWith('a');
       });
 
-      it('should only unbind hotkey with Mousetrap when disableTooltip is true', () => {
+      xit('should only unbind hotkey with Mousetrap when disableTooltip is true', () => {
         hotkeyWraper.setProps({ disableTooltip: true });
         hotkeyWraper.unmount();
 
