@@ -37,7 +37,7 @@ const InAction = () => (
       {InActionCode}
     </SyntaxHighlighter>
     <p>This is the component from the above code, try to call his hotkey!</p>
-    <div style={{ 'text-align': 'center' }}>
+    <div style={{ textAlign: 'center' }}>
       <FocusableButton />
     </div>
   </section>

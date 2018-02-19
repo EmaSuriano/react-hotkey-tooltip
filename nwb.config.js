@@ -10,5 +10,8 @@ module.exports = {
     aliases: {
       lib: path.resolve('src'),
     },
+    html: {
+      title: 'React Hotkey Tooltip',
+    },
   },
 };
