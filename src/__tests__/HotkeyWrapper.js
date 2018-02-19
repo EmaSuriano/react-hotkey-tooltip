@@ -121,6 +121,79 @@ describe('<HotkeyWraper />', () => {
       });
     });
 
+    describe('componentWillReceiveProps', () => {
+      let setShowTooltip;
+
+      beforeEach(() => {
+        setShowTooltip = hotkeyWraper.instance().setShowTooltip;
+
+        helpTooltipHandler.addNewTooltipHelp.mockClear();
+        helpTooltipHandler.removeToolTipHelp.mockClear();
+
+        MouseTrap.bind.mockClear();
+        MouseTrap.unbind.mockClear();
+      });
+
+      describe('when disableTooltip has changed', () => {
+        it('should call removeToolTipHelp when disableToltip is true', () => {
+          hotkeyWraper.setProps({ disableTooltip: true });
+
+          expect(helpTooltipHandler.removeToolTipHelp).toHaveBeenCalledWith(
+            '?',
+            setShowTooltip,
+          );
+          expect(helpTooltipHandler.addNewTooltipHelp).not.toHaveBeenCalled();
+        });
+
+        it('should call addNewTooltipHelp when disableToltip is false', () => {
+          hotkeyWraper.setProps({ disableTooltip: true });
+          helpTooltipHandler.addNewTooltipHelp.mockClear();
+          helpTooltipHandler.removeToolTipHelp.mockClear();
+
+          hotkeyWraper.setProps({ disableTooltip: false });
+
+          expect(helpTooltipHandler.addNewTooltipHelp).toHaveBeenCalledWith(
+            '?',
+            setShowTooltip,
+          );
+          expect(helpTooltipHandler.removeToolTipHelp).not.toHaveBeenCalled();
+        });
+      });
+
+      describe('when tooltipHotkey has changed', () => {
+        it('should do nothing when disableTooltip is true', () => {
+          hotkeyWraper.setProps({ disableTooltip: true });
+          helpTooltipHandler.addNewTooltipHelp.mockClear();
+          helpTooltipHandler.removeToolTipHelp.mockClear();
+
+          hotkeyWraper.setProps({ disableTooltip: true, tooltipHotkey: 'h' });
+
+          expect(helpTooltipHandler.removeToolTipHelp).not.toHaveBeenCalled();
+          expect(helpTooltipHandler.addNewTooltipHelp).not.toHaveBeenCalled();
+        });
+
+        it('should remove current tooltipHotkey and add new one when disableTooltip is false', () => {
+          hotkeyWraper.setProps({ disableTooltip: false, tooltipHotkey: 'h' });
+
+          expect(helpTooltipHandler.removeToolTipHelp).toHaveBeenCalledWith(
+            '?',
+            setShowTooltip,
+          );
+          expect(helpTooltipHandler.addNewTooltipHelp).toHaveBeenCalledWith(
+            'h',
+            setShowTooltip,
+          );
+        });
+      });
+
+      it('should unbind current hotkey and bind the new one when hotkey has changed', () => {
+        hotkeyWraper.setProps({ hotkey: 'b' });
+
+        expect(MouseTrap.unbind).toHaveBeenCalledWith('a');
+        expect(MouseTrap.bind).toHaveBeenCalledWith('b', onHotkeyPressed);
+      });
+    });
+
     describe('componentWillUnmount', () => {
       it('should unbind hotkey with Mousetrap and call removeToolTipHelp when disableTooltip is false', () => {
         const { setShowTooltip } = hotkeyWraper.instance();
@@ -133,8 +206,17 @@ describe('<HotkeyWraper />', () => {
         expect(MouseTrap.unbind).toHaveBeenCalledWith('a');
       });
 
-      xit('should only unbind hotkey with Mousetrap when disableTooltip is true', () => {
-        hotkeyWraper.setProps({ disableTooltip: true });
+      it('should only unbind hotkey with Mousetrap when disableTooltip is true', () => {
+        hotkeyWraper = shallow(
+          <HotkeyWraper
+            hotkey="a"
+            onHotkeyPressed={onHotkeyPressed}
+            disableTooltip
+          >
+            <p>Inner children</p>
+          </HotkeyWraper>,
+        );
+
         hotkeyWraper.unmount();
 
         expect(helpTooltipHandler.removeToolTipHelp).not.toHaveBeenCalled();

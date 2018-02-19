@@ -27,6 +27,21 @@ class HotkeyWrapper extends Component {
     showTooltip: false,
   };
 
+  componentDidMount() {
+    const {
+      disableTooltip,
+      hotkey,
+      onHotkeyPressed,
+      tooltipHotkey,
+    } = this.props;
+
+    if (!disableTooltip) {
+      addNewTooltipHelp(tooltipHotkey, this.setShowTooltip);
+    }
+
+    bind(hotkey, onHotkeyPressed);
+  }
+
   componentWillReceiveProps(nextProps) {
     const {
       disableTooltip,
@@ -55,21 +70,6 @@ class HotkeyWrapper extends Component {
       unbind(hotkey);
       bind(nextProps.hotkey, onHotkeyPressed);
     }
-  }
-
-  componentDidMount() {
-    const {
-      disableTooltip,
-      hotkey,
-      onHotkeyPressed,
-      tooltipHotkey,
-    } = this.props;
-
-    if (!disableTooltip) {
-      addNewTooltipHelp(tooltipHotkey, this.setShowTooltip);
-    }
-
-    bind(hotkey, onHotkeyPressed);
   }
 
   componentWillUnmount() {
