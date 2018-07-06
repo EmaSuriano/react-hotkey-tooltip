@@ -1,11 +1,15 @@
 {
   "name": "react-hotkey-tooltip",
   "version": "0.0.0-development",
-  "description":
-    "React component that creates hotkeys for your components and shows a tooltip of it",
+  "description": "React component that creates hotkeys for your components and shows a tooltip of it",
   "main": "lib/index.js",
   "module": "es/index.js",
-  "files": ["css", "es", "lib", "umd"],
+  "files": [
+    "css",
+    "es",
+    "lib",
+    "umd"
+  ],
   "scripts": {
     "build": "nwb build-react-component",
     "clean": "nwb clean-module && nwb clean-demo",
@@ -20,6 +24,7 @@
     "debug": "node --debug-brk --inspect ./node_modules/.bin/jest -i"
   },
   "dependencies": {
+    "jest": "^23.3.0",
     "mousetrap": "^1.6.1",
     "raf": "^3.4.0",
     "react-proptypes": "^1.0.0",
@@ -38,15 +43,13 @@
     "enzyme-adapter-react-16": "^1.1.1",
     "fd-slicer": "^1.0.1",
     "gh-pages": "^1.1.0",
-    "jest": "^22.4.3",
     "nwb": "0.21.x",
     "nwb-sass": "^0.8.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-github-corner": "^2.1.0",
-    "semantic-release": "^15.0.0",
-    "react-test-renderer": "^16.3.0",
     "react-syntax-highlighter": "^8.0.0",
+    "react-test-renderer": "^16.3.0",
     "semantic-release": "^15.1.4",
     "styled-components": "^3.1.6",
     "travis-deploy-once": "^5.0.0",
@@ -58,11 +61,16 @@
     "url": "http://emasuriano.github.com/"
   },
   "jest": {
-    "setupFiles": ["raf/polyfill", "<rootDir>/test-setup.js"],
+    "setupFiles": [
+      "raf/polyfill",
+      "<rootDir>/test-setup.js"
+    ],
     "transform": {
       "^.+\\.js$": "<rootDir>/jest.transform.js"
     },
-    "moduleDirectories": ["node_modules"],
+    "moduleDirectories": [
+      "node_modules"
+    ],
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}",
       "!**/setupTests.js",
@@ -72,7 +80,12 @@
   "homepage": "https://emasuriano.github.io/react-hotkey-tooltip",
   "license": "MIT",
   "repository": "https://github.com/EmaSuriano/react-hotkey-tooltip",
-  "keywords": ["react-component", "hotkey", "tooltip", "shortcut"],
+  "keywords": [
+    "react-component",
+    "hotkey",
+    "tooltip",
+    "shortcut"
+  ],
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
