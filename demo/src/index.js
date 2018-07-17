@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import Demo from './Demo';
 import WebFont from 'webfontloader';
+import V2 from './v2';
 
 WebFont.load({
   google: {
@@ -9,4 +10,4 @@ WebFont.load({
   },
 });
 
-ReactDOM.render(<Demo />, document.querySelector('#demo'));
+ReactDOM.render(<V2 />, document.querySelector('#demo'));
