@@ -9,7 +9,7 @@
 
 A global Hotkey provider with built in tooltip for React. Demo at [Demo Page](https://emasuriano.github.io/react-hotkey-tooltip/).
 
-![Example](doc/Demo.gif)
+![Example](asset/Demo.gif)
 
 ## Why you should use it?
 

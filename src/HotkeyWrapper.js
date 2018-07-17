@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from 'react-proptypes';
+import PropTypes from 'prop-types';
 import { Tooltip } from 'react-tippy';
 import { bind, unbind } from 'mousetrap';
 import { addNewTooltipHelp, removeToolTipHelp } from './helpTooltipHandler';
