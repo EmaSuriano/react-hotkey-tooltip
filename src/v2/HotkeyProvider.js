@@ -24,22 +24,13 @@ export class HotkeyProvider extends Component {
     );
   }
 
-  // static getDerivedStateFromProps(props, state) {
-  //   const { tooltipCombination } = props;
-  //   if (tooltipCombination !== state.combination) {
-
-  //   }
-  // }
-
   state = {
     showTooltip: false,
     combination: this.props.tooltipCombination,
   };
 
-  changeTooltipVisibility = on => () => {
-    console.log('changing visibility', on);
-    this.setState({ showTooltip: on });
-  };
+  changeTooltipVisibility = on => () =>
+    on !== this.state.showTooltip && this.setState({ showTooltip: on });
 
   render() {
     const { children } = this.props;

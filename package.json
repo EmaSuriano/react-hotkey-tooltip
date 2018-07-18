@@ -26,7 +26,10 @@
     "docz:build": "docz build"
   },
   "dependencies": {
+    "css-loader": "^1.0.0",
     "mousetrap": "^1.6.1",
+    "postcss": "^7.0.0",
+    "ramda": "^0.25.0",
     "react-tippy": "^1.2.2"
   },
   "peerDependencies": {
