@@ -35,9 +35,7 @@ export default class Hotkey extends React.Component {
     return (
       <Consumer>
         {({ showTooltip }) => {
-          console.log(myChildren);
-          console.log(this.child);
-          console.log(this.child.current);
+          console.log(showTooltip, 'here');
           return (
             <Tooltip
               title={combination.toUpperCase()}
@@ -83,7 +81,7 @@ export default class Hotkey extends React.Component {
 Hotkey.propTypes = {
   combination: PropTypes.string,
   onPress: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
-  children: PropTypes.node,
+  children: PropTypes.element.isRequired,
 };
 
 // export default Hotkey;

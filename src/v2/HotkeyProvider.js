@@ -5,8 +5,28 @@ import MouseTrap from 'mousetrap';
 
 export class HotkeyProvider extends Component {
   static propTypes = {
+    /**
+     * Description of prop "foo".
+     */
     children: PropTypes.node.isRequired,
-    tooltipCombination: PropTypes.string.isRequired,
+    /**
+     * Key combination to trigger the tooltips
+     */
+    tooltipCombination: PropTypes.string,
+    /**
+     * Options passed to react-tippy
+     */
+    tooltipOptions: PropTypes.object,
+    /**
+     * Disabled all Hotkeys
+     */
+    disabled: PropTypes.bool,
+  };
+
+  static defaultProps = {
+    disabled: false,
+    tooltipOptions: {},
+    tooltipCombination: 'shift+h',
   };
 
   constructor(props) {
@@ -27,17 +47,16 @@ export class HotkeyProvider extends Component {
   state = {
     showTooltip: false,
     combination: this.props.tooltipCombination,
+    hotkeys: [this.props.tooltipCombination],
   };
 
   changeTooltipVisibility = on => () =>
     on !== this.state.showTooltip && this.setState({ showTooltip: on });
 
   render() {
-    const { children } = this.props;
-    const { showTooltip } = this.state;
-
+    const { children, disabled } = this.props;
     const value = {
-      showTooltip,
+      showTooltip: this.state.showTooltip && !disabled,
     };
 
     return <Provider value={value}>{children}</Provider>;
