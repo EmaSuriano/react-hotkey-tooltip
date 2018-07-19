@@ -5,22 +5,21 @@
 [![npm package badge](https://img.shields.io/npm/v/react-hotkey-tooltip.svg)](https://www.npmjs.com/package/react-hotkey-tooltip)
 [![Coveralls badge](https://img.shields.io/coveralls/github/EmaSuriano/react-hotkey-tooltip.svg)](https://coveralls.io/github/EmaSuriano/react-hotkey-tooltip)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![eslint](https://img.shields.io/badge/eslint-enabled-green.svg)](https://eslint.org/)
+[![Code style: Prettier](https://img.shields.io/badge/Code_style-Prettier-e31f2e.svg)](https://github.com/prettier/prettier)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
 A global Hotkey provider with built in tooltip for React. Demo at [Demo Page](https://emasuriano.github.io/react-hotkey-tooltip/).
 
 ![Example](asset/Demo.gif)
 
-
-WARNING: Try to not use the same shortcut in the same screen, due to the hotkeys with the same combination will be overwritten by the last one define. This is the default behaviour of mousetrap.
-
 ## Why you should use it?
 
 When working with hotkeys in a React application we will find many problems when trying to implement it:
 
-* Hotkeys are only accesible inside a specific component (not globally).
-* Must take care of the hotkeys manually throughout the life cycle.
-* Have to provide a way so the user can see all the hotkeys on the screen.
+- Hotkeys are only accesible inside a specific component (not globally).
+- Must take care of the hotkeys manually throughout the life cycle.
+- Have to provide a way so the user can see all the hotkeys on the screen.
 
 This library will help you by declaring global hotkeys that automatically will be updated by any life cycle of the component and show a tooltip by pressing a combination of keys ✨
 
@@ -28,8 +27,8 @@ This library will help you by declaring global hotkeys that automatically will b
 
 Why mess up with document.addEventListener or positioning/styling tooltips if there are a lot of open source libraries that can do that for me. This are the chosen ones!
 
-* [mousetrap](https://github.com/ccampbell/mousetrap): to bind and unbind hotkeys globally 🌐
-* [react-tippy](https://github.com/tvkhoa/react-tippy): to display beautiful tooltips 😄
+- [mousetrap](https://github.com/ccampbell/mousetrap): to bind and unbind hotkeys globally 🌐
+- [react-tippy](https://github.com/tvkhoa/react-tippy): to display beautiful tooltips 😄
 
 ## Installation
 

@@ -4,51 +4,48 @@ route: /
 order: 1
 ---
 
-import { Playground, PropsTable  } from 'docz'
 import { Hotkey, HotkeyProvider } from '../src/v2';
-import TestingWrapper from './TestingWrapper.js'
+import NextSection from './NextSection';
+import GithubLink from './GithubLink';
 
-# Hello world
+<GithubLink />
 
-<Playground>
-  <HotkeyProvider tooltipCombination="shift+a">
+# Introduction
+
+## Why you should use it?
+
+When working with hotkeys/shorcuts in a React application, it's normal to have these kind of problems:
+* Declared hotkeys are only accesible inside a specific component (not globally).
+* Must take care of the hotkeys manually throughout the life cycle (e.g. remove the hotkey when the component is unmount).
+* Have to provide a way so the user can see all the hotkeys on the screen.
+
+This library helps you by declaring **global hotkeys** that automatically will be **updated by any life cycle** of the component and show a **tooltip with its hotkey** ✨
+
+## Built with
+
+Why mess up with `document.addEventListener` or positioning/styling tooltips if there are a lot of open source libraries that can do that for me. This are the chosen ones!
+
+* [mousetrap](https://github.com/ccampbell/mousetrap): to bind and unbind hotkeys globally 🌐
+* [react-tippy](https://github.com/tvkhoa/react-tippy): to display beautiful tooltips 😄
+
+## Basic Example
+
+By pressing `shift+h` a tooltip will be displayed with the hotkey of the button. Then by pressing `a` it will the `click` event of the button 🎉
+
+<div style={{ textAlign: 'center '}}>
+     <HotkeyProvider>
     <Hotkey combination="a" onPress="click">
-      <button onClick={alert}>Ok!</button>
-    </Hotkey>
-    <Hotkey combination="b" onPress="focus">
-      <button onClick={() => alert('1')}>Ok!</button>
-    </Hotkey>
-    <Hotkey combination="c" onPress={alert}>
-      <button onClick={alert}>Ok!</button>
+      <button onClick={() => alert('You have clicked me!')}>Click me using your keyboard!</button>
     </Hotkey>
   </HotkeyProvider>
-</Playground>
+</div>
 
-<Playground>
-  <HotkeyProvider >
-    <Hotkey combination="a" onPress="click">
-      <button onClick={alert}>Ok!</button>
-    </Hotkey>
-    <Hotkey combination="b" onPress="focus">
-      <button onClick={() => alert('1')}>Ok!</button>
-    </Hotkey>
-    <Hotkey combination="c" onPress={alert}>
-      <button onClick={alert}>Ok!</button>
-    </Hotkey>
-  </HotkeyProvider>
-</Playground>
+## License
 
+MIT. Also check react-tippy.js' and mousetrap' license.
 
-<PropsTable of={Hotkey} />
+## Contribute ❤️
 
-<PropsTable of={HotkeyProvider} />
+I'm open to any Pull Request to improve this library, the idea is to help the community!
 
-
-
-
-
-
-
-
-
-
+<NextSection url="/getting-started" name="Getting Started"/>

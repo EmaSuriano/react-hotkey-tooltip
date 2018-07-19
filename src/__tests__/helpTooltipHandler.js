@@ -1,5 +1,5 @@
-import { addNewTooltipHelp, removeToolTipHelp } from '../helpTooltipHandler';
 import MouseTrap from 'mousetrap';
+import { addNewTooltipHelp, removeToolTipHelp } from '../helpTooltipHandler';
 
 jest.mock('mousetrap', () => ({
   bind: jest.fn(),

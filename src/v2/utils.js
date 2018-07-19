@@ -1,5 +1,4 @@
 import { is, curry } from 'ramda';
-import { hot } from 'react-hot-loader';
 
 export const isFunction = is(Function);
 

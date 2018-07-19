@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Provider } from './HotkeyContext';
 import MouseTrap from 'mousetrap';
-import HotkeyRegister from './HotkeyRegister';
+import { Provider } from './HotkeyContext';
 import { KEYBOARD_EVENT } from './utils';
 
-export class HotkeyProvider extends Component {
+class HotkeyProvider extends Component {
   static propTypes = {
     /** Your React components */
     children: PropTypes.node.isRequired,
@@ -25,18 +24,23 @@ export class HotkeyProvider extends Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      showTooltip: false,
+    };
     this.addTooltipHotkey(props.tooltipCombination);
   }
 
-  componentWillReceiveProps(newProps) {
-    if (newProps.tooltipCombination !== this.props.tooltipCombination) {
-      this.removeTooltipHotkey(this.props.tooltipCombination);
+  componentWillReceiveProps(nextProps) {
+    const { tooltipCombination } = this.props;
+    if (nextProps.tooltipCombination !== tooltipCombination) {
+      this.removeTooltipHotkey(tooltipCombination);
       this.addTooltipHotkey(nextProps.tooltipCombination);
     }
   }
 
   componentWillUnmount() {
-    this.removeTooltipHotkey(this.props.tooltipCombination);
+    const { tooltipCombination } = this.props;
+    this.removeTooltipHotkey(tooltipCombination);
   }
 
   addTooltipHotkey = combination => {
@@ -57,20 +61,19 @@ export class HotkeyProvider extends Component {
     MouseTrap.unbind(combination, KEYBOARD_EVENT.KEY_UP);
   };
 
-  state = {
-    showTooltip: false,
-    combination: this.props.tooltipCombination,
-  };
-
   changeTooltipVisibility = on => () => {
-    if (on === this.state.showTooltip || this.props.disabled) return;
+    const { showTooltip } = this.state;
+    const { disabled } = this.props;
+    if (on === showTooltip || disabled) return;
     this.setState({ showTooltip: on });
   };
 
   render() {
     const { children, disabled, tooltipOptions } = this.props;
+    const { showTooltip } = this.state;
+
     const value = {
-      showTooltip: this.state.showTooltip && !disabled,
+      showTooltip: showTooltip && !disabled,
       disabled,
       tooltipOptions,
     };

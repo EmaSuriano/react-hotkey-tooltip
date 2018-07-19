@@ -1,5 +1,5 @@
-import HotkeyWrapper from '../../src';
 import React, { Component } from 'react';
+import HotkeyWrapper from '../../src';
 import {
   WhyShouldIUseIt,
   BuiltWith,

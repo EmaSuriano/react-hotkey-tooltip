@@ -1,75 +1,75 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Tooltip } from 'react-tippy';
-import { Consumer } from './HotkeyContext';
-import { path, is } from 'ramda';
-import { isFunction, KEYBOARD_EVENT, ERROR_MESSAGES } from './utils';
-import ReactDOM from 'react-dom';
-import HotkeyRegister from './HotkeyRegister';
-import withHotkeyConsumer from './withHotkeyConsumer';
 import MouseTrap from 'mousetrap';
-// console.log(Hotkey.propTypes);
+import { Consumer } from './HotkeyContext';
+import { isFunction, ERROR_MESSAGES } from './utils';
 
 class HotkeyInner extends React.Component {
   static propTypes = {
     combination: PropTypes.string.isRequired,
     onPress: PropTypes.oneOfType([PropTypes.func, PropTypes.string]).isRequired,
     children: PropTypes.element.isRequired,
-    disabled: PropTypes.bool,
-    showTooltip: PropTypes.bool,
-    tooltipProps: PropTypes.object,
+    disabled: PropTypes.bool.isRequired,
+    showTooltip: PropTypes.bool.isRequired,
+    tooltipOptions: PropTypes.object.isRequired,
   };
 
   constructor(props) {
     super(props);
 
     this.child = React.createRef();
-    MouseTrap.bind(this.props.combination, this.onPressHotkey);
+    MouseTrap.bind(props.combination, this.onPressHotkey);
   }
 
-  componentWillReceiveProps(newProps) {
-    if (newProps.combination !== this.props.combination) {
-      MouseTrap.unbind(this.props.combination);
+  componentWillReceiveProps(nextProps) {
+    const { combination } = this.props;
+    if (nextProps.combination !== combination) {
+      MouseTrap.unbind(combination);
       MouseTrap.bind(nextProps.combination, this.onPressHotkey);
     }
   }
 
   componentWillUnmount() {
-    MouseTrap.unbind(this.props.combination);
+    const { combination } = this.props;
+
+    MouseTrap.unbind(combination);
   }
 
   onPressHotkey = evt => {
     const { onPress, disabled } = this.props;
-    if (disabled) return;
+    if (disabled) return false;
 
     if (isFunction(onPress)) return onPress(evt);
 
     if (!isFunction(this.child.current[onPress])) {
-      return console.error(ERROR_MESSAGES.METHOD_NOT_FOUND_IN_CHILD);
+      return new Error(ERROR_MESSAGES.METHOD_NOT_FOUND_IN_CHILD);
     }
+
     return this.child.current[onPress](evt);
   };
 
   render() {
-    const { children, combination, disabled } = this.props;
+    const {
+      children,
+      combination,
+      disabled,
+      showTooltip,
+      tooltipOptions,
+    } = this.props;
 
     return (
-      <Consumer>
-        {({ showTooltip }) => {
-          return (
-            <Tooltip
-              title={combination.toUpperCase()}
-              open={showTooltip && !disabled}
-              trigger="manual"
-              multiple
-            >
-              {React.cloneElement(children, {
-                ref: this.child,
-              })}
-            </Tooltip>
-          );
-        }}
-      </Consumer>
+      <Tooltip
+        {...tooltipOptions}
+        title={combination.toUpperCase()}
+        open={showTooltip && !disabled}
+        trigger="manual"
+        multiple
+      >
+        {React.cloneElement(children, {
+          ref: this.child,
+        })}
+      </Tooltip>
     );
   }
 }

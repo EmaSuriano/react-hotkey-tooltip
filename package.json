@@ -23,9 +23,11 @@
     "semantic-release": "semantic-release",
     "debug": "node --debug-brk --inspect ./node_modules/.bin/jest -i",
     "docz:dev": "docz dev",
-    "docz:build": "docz build"
+    "docz:build": "docz build",
+    "lint": "eslint ."
   },
   "dependencies": {
+    "babel-eslint": "^8.2.6",
     "css-loader": "^1.0.0",
     "mousetrap": "^1.6.1",
     "postcss": "^7.0.0",
@@ -46,6 +48,11 @@
     "docz-plugin-css": "^0.5.9",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.10.0",
     "fd-slicer": "^1.0.1",
     "gh-pages": "^1.1.0",
     "jest": "^23.4.1",

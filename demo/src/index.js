@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import Demo from './Demo';
 import WebFont from 'webfontloader';
+import Demo from './Demo';
 import V2 from './v2';
 
 WebFont.load({
