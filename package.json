@@ -30,7 +30,8 @@
     "mousetrap": "^1.6.1",
     "postcss": "^7.0.0",
     "ramda": "^0.25.0",
-    "react-tippy": "^1.2.2"
+    "react-tippy": "^1.2.2",
+    "uuid": "^3.3.2"
   },
   "peerDependencies": {
     "react": "^16.3.0"

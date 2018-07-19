@@ -2,24 +2,18 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Provider } from './HotkeyContext';
 import MouseTrap from 'mousetrap';
+import HotkeyRegister from './HotkeyRegister';
+import { KEYBOARD_EVENT } from './utils';
 
 export class HotkeyProvider extends Component {
   static propTypes = {
-    /**
-     * Description of prop "foo".
-     */
+    /** Your React components */
     children: PropTypes.node.isRequired,
-    /**
-     * Key combination to trigger the tooltips
-     */
+    /** Key combination to trigger the tooltips */
     tooltipCombination: PropTypes.string,
-    /**
-     * Options passed to react-tippy
-     */
+    /** Options passed to react-tippy */
     tooltipOptions: PropTypes.object,
-    /**
-     * Disabled all Hotkeys
-     */
+    /** Disabled all Hotkeys */
     disabled: PropTypes.bool,
   };
 
@@ -31,32 +25,54 @@ export class HotkeyProvider extends Component {
 
   constructor(props) {
     super(props);
-    const { tooltipCombination } = props;
-    MouseTrap.bind(
-      tooltipCombination,
-      this.changeTooltipVisibility(true),
-      'keydown',
-    );
-    MouseTrap.bind(
-      tooltipCombination,
-      this.changeTooltipVisibility(false),
-      'keyup',
-    );
+    this.addTooltipHotkey(props.tooltipCombination);
   }
+
+  componentWillReceiveProps(newProps) {
+    if (newProps.tooltipCombination !== this.props.tooltipCombination) {
+      this.removeTooltipHotkey(this.props.tooltipCombination);
+      this.addTooltipHotkey(nextProps.tooltipCombination);
+    }
+  }
+
+  componentWillUnmount() {
+    this.removeTooltipHotkey(this.props.tooltipCombination);
+  }
+
+  addTooltipHotkey = combination => {
+    MouseTrap.bind(
+      combination,
+      this.changeTooltipVisibility(true),
+      KEYBOARD_EVENT.KEY_DOWN,
+    );
+    MouseTrap.bind(
+      combination,
+      this.changeTooltipVisibility(false),
+      KEYBOARD_EVENT.KEY_UP,
+    );
+  };
+
+  removeTooltipHotkey = combination => {
+    MouseTrap.unbind(combination, KEYBOARD_EVENT.KEY_DOWN);
+    MouseTrap.unbind(combination, KEYBOARD_EVENT.KEY_UP);
+  };
 
   state = {
     showTooltip: false,
     combination: this.props.tooltipCombination,
-    hotkeys: [this.props.tooltipCombination],
   };
 
-  changeTooltipVisibility = on => () =>
-    on !== this.state.showTooltip && this.setState({ showTooltip: on });
+  changeTooltipVisibility = on => () => {
+    if (on === this.state.showTooltip || this.props.disabled) return;
+    this.setState({ showTooltip: on });
+  };
 
   render() {
-    const { children, disabled } = this.props;
+    const { children, disabled, tooltipOptions } = this.props;
     const value = {
       showTooltip: this.state.showTooltip && !disabled,
+      disabled,
+      tooltipOptions,
     };
 
     return <Provider value={value}>{children}</Provider>;

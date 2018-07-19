@@ -11,6 +11,9 @@ A global Hotkey provider with built in tooltip for React. Demo at [Demo Page](ht
 
 ![Example](asset/Demo.gif)
 
+
+WARNING: Try to not use the same shortcut in the same screen, due to the hotkeys with the same combination will be overwritten by the last one define. This is the default behaviour of mousetrap.
+
 ## Why you should use it?
 
 When working with hotkeys in a React application we will find many problems when trying to implement it:

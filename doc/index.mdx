@@ -6,17 +6,31 @@ order: 1
 
 import { Playground, PropsTable  } from 'docz'
 import { Hotkey, HotkeyProvider } from '../src/v2';
-
+import TestingWrapper from './TestingWrapper.js'
 
 # Hello world
 
 <Playground>
-  <HotkeyProvider>
-    <Hotkey combination="a" onPress="click" disabled>
+  <HotkeyProvider tooltipCombination="shift+a">
+    <Hotkey combination="a" onPress="click">
       <button onClick={alert}>Ok!</button>
     </Hotkey>
     <Hotkey combination="b" onPress="focus">
-      <button onClick={() => alert("1")}>Ok!</button>
+      <button onClick={() => alert('1')}>Ok!</button>
+    </Hotkey>
+    <Hotkey combination="c" onPress={alert}>
+      <button onClick={alert}>Ok!</button>
+    </Hotkey>
+  </HotkeyProvider>
+</Playground>
+
+<Playground>
+  <HotkeyProvider >
+    <Hotkey combination="a" onPress="click">
+      <button onClick={alert}>Ok!</button>
+    </Hotkey>
+    <Hotkey combination="b" onPress="focus">
+      <button onClick={() => alert('1')}>Ok!</button>
     </Hotkey>
     <Hotkey combination="c" onPress={alert}>
       <button onClick={alert}>Ok!</button>
@@ -25,10 +39,15 @@ import { Hotkey, HotkeyProvider } from '../src/v2';
 </Playground>
 
 
+<PropsTable of={Hotkey} />
 
-
-# HotkeyProvider
 <PropsTable of={HotkeyProvider} />
+
+
+
+
+
+
 
 
 
