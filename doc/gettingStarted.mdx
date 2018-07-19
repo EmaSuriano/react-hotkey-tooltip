@@ -1,0 +1,43 @@
+---
+name: Getting Started
+route: /getting-started
+---
+
+import { Playground, PropsTable  } from 'docz'
+import { Hotkey, HotkeyProvider } from '../src';
+import NextSection from './NextSection';
+import GithubLink from './GithubLink';
+
+<GithubLink />
+
+# Getting Started
+
+## Installation
+
+The library is available as a package in npm and yarn, so use the one you prefer.
+
+``` bash
+# npm
+$ npm install react-hotkey-toolip
+
+# yarn
+$ yarn add react-hotkey-tooltip
+```
+
+## Using
+
+The library exports two main components
+* [HotkeyProvider](): Responsible for toggling all the tooltips of `Hotkeys`.
+* [Hotkey](): Responsible for calling the `action` after detecting the hotkey was preseed and for positioning the tooltip.
+
+<Playground>
+  <HotkeyProvider>
+     <Hotkey combination="a" onPress="click">
+      <button onClick={() => alert('You have clicked me!')}>Click me using your keyboard!</button>
+    </Hotkey>
+  </HotkeyProvider>
+</Playground>
+
+** WARNING: Avoid using the same hotkey's combination in the same screen, due to they are going to be overwritten by the last one define. This is the default behavior of mousetrap.**
+
+<NextSection url="/hotkey-provider" name="Hotkey Provider"/>

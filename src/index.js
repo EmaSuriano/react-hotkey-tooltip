@@ -1,4 +1,5 @@
-import HotkeyWrapper from './HotkeyWrapper';
-import 'react-tippy/dist/tippy.css';
+import Hotkey from './Hotkey';
+import HotkeyProvider from './HotkeyProvider';
+import './styles.css';
 
-export default HotkeyWrapper;
+export { HotkeyProvider, Hotkey };
