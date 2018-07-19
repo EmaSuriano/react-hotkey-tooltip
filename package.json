@@ -14,17 +14,15 @@
     "build": "nwb build-react-component",
     "clean": "nwb clean-module && nwb clean-demo",
     "start": "nwb serve-react-demo",
-    "test": "jest  --coverage",
+    "test": "jest --coverage",
     "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage",
     "deploy-gh": "gh-pages -d demo/dist",
     "travis-deploy-once": "travis-deploy-once",
     "commit": "git-cz",
     "semantic-release": "semantic-release",
-    "debug": "node --debug-brk --inspect ./node_modules/.bin/jest -i",
     "docz:dev": "docz dev",
     "docz:build": "docz build",
-    "lint": "eslint ."
+    "lint": "eslint ./src"
   },
   "dependencies": {
     "babel-eslint": "^8.2.6",

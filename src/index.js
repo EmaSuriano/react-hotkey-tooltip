@@ -1,3 +1,5 @@
-import HotkeyWrapper from './HotkeyWrapper';
+import Hotkey from './Hotkey';
+import HotkeyProvider from './HotkeyProvider';
+import './styles.css';
 
-export default HotkeyWrapper;
+export { HotkeyProvider, Hotkey };

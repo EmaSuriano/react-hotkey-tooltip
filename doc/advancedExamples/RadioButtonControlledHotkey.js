@@ -1,6 +1,6 @@
 /* eslint no-alert: 0 */
 import React, { Component, Fragment } from 'react';
-import { Hotkey, HotkeyProvider } from '../../src/v2';
+import { Hotkey, HotkeyProvider } from '../../src';
 
 const Separator = () => (
   <Fragment>
