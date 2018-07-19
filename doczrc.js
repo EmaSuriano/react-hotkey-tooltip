@@ -10,4 +10,5 @@ export default {
   themeConfig: {
     mode: 'light',
   },
+  hashRouter: true,
 };

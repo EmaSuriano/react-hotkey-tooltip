@@ -16,7 +16,7 @@
     "start": "nwb serve-react-demo",
     "test": "jest --coverage",
     "test:watch": "jest --watch",
-    "deploy-gh": "gh-pages -d demo/dist",
+    "deploy-gh": "gh-pages -d .docz/dist",
     "travis-deploy-once": "travis-deploy-once",
     "commit": "git-cz",
     "semantic-release": "semantic-release",
