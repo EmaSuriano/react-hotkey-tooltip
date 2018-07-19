@@ -1,6 +1,6 @@
 {
   "name": "react-hotkey-tooltip",
-  "version": "0.0.0-development",
+  "version": "3.0.0",
   "description": "React component that creates hotkeys for your components and shows a tooltip of it",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -61,7 +61,7 @@
   "author": {
     "name": "Emanuel Suriano",
     "email": "emanuel.suriano@gmail.com",
-    "url": "http://emasuriano.github.com/"
+    "url": "http://emasuriano.com/"
   },
   "jest": {
     "setupFiles": [
@@ -80,7 +80,7 @@
       "!src/index.js"
     ]
   },
-  "homepage": "https://emasuriano.github.io/react-hotkey-tooltip",
+  "homepage": "https://react-hotkey-tooltip.netlify.com/",
   "license": "MIT",
   "repository": "https://github.com/EmaSuriano/react-hotkey-tooltip",
   "keywords": [
