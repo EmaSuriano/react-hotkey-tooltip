@@ -12,16 +12,10 @@
   ],
   "scripts": {
     "build": "nwb build-react-component",
-    "clean": "nwb clean-module && nwb clean-demo",
-    "start": "nwb serve-react-demo",
-    "test": "jest --coverage",
-    "test:watch": "jest --watch",
-    "deploy-gh": "gh-pages -d .docz/dist",
-    "travis-deploy-once": "travis-deploy-once",
-    "commit": "git-cz",
-    "semantic-release": "semantic-release",
     "docz:dev": "docz dev",
     "docz:build": "docz build",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch",
     "lint": "eslint ./src"
   },
   "dependencies": {
