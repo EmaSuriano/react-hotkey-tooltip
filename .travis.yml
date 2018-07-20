@@ -9,7 +9,6 @@ notifications:
 
 node_js:
   - 8
-  - 10
 
 before_install:
   - npm install -g npm
@@ -17,7 +16,6 @@ before_install:
 
 after_success:
   - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
-  - npm run travis-deploy-once "npm run semantic-release"
 
 branches:
   only:
