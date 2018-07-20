@@ -1,6 +1,13 @@
-<div style="text-align:center">
-<h1>React Hotkey Tooltip</h1>
-<img src ="./doc/logo.png" style="width: 200px" alt="React Hotkey Tooltip logo" />
+# React Hotkey Tooltip
+
+<div align="center">
+  <a href="https://react-hotkey-tooltip.netlify.com/#/">
+    <img alt="react-hotkey-tooltip logo" src="./doc/logo.png" height="150px" />
+  </a>
+</div>
+
+<div align="center">
+  <strong>A global Hotkey provider with built in tooltip for React</strong>
 </div>
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/EmaSuriano/react-hotkey-tooltip.svg)](https://greenkeeper.io/)
@@ -10,9 +17,7 @@
 [![eslint](https://img.shields.io/badge/eslint-enabled-green.svg)](https://eslint.org/)
 [![Code style: Prettier](https://img.shields.io/badge/Code_style-Prettier-e31f2e.svg)](https://github.com/prettier/prettier)
 
-A global Hotkey provider with built in tooltip for React
-
-[Check Full Documentation!](https://react-hotkey-tooltip.netlify.com/)
+## [Docs](https://react-hotkey-tooltip.netlify.com/)
 
 ## Why you should use it?
 
