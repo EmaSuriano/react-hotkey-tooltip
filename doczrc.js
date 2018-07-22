@@ -1,12 +1,11 @@
-import { css } from 'docz-plugin-css';
-
 export default {
-  plugins: [
-    css({
-      preprocessor: 'postcss',
-      cssmodules: true,
-    }),
-  ],
+  modifyBundlerConfig: config => {
+    config.module.rules.push({
+      test: /\.css$/,
+      use: ['style-loader', 'css-loader'],
+    });
+    return config;
+  },
   themeConfig: {
     mode: 'light',
   },
