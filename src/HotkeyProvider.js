@@ -62,6 +62,7 @@ class HotkeyProvider extends Component {
   };
 
   changeTooltipVisibility = on => () => {
+    console.log('changin state!');
     const { showTooltip } = this.state;
     const { disabled } = this.props;
     if (on === showTooltip || disabled) return;
