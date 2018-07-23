@@ -9,7 +9,7 @@
 
 <div align="center">
   <a href="https://react-hotkey-tooltip.netlify.com/#/">
-    <img alt="react-hotkey-tooltip logo" src="./doc/logo.png" height="150px" />
+    <img alt="react-hotkey-tooltip logo" src="./doc/media/logo.png" height="150px" />
   </a>
 </div>
 
