@@ -1,5 +1,5 @@
 import Hotkey from './Hotkey';
 import HotkeyProvider from './HotkeyProvider';
-import './styles.css';
+import 'react-tippy/dist/tippy.css';
 
 export { HotkeyProvider, Hotkey };
