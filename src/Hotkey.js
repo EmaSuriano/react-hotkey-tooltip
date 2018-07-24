@@ -3,13 +3,15 @@ import PropTypes from 'prop-types';
 import { Tooltip } from 'react-tippy';
 import MouseTrap from 'mousetrap';
 import { Consumer } from './HotkeyContext';
-import { isFunction, ERROR_MESSAGES } from './utils';
+import { isFunction } from './utils';
 
 class HotkeyInner extends React.Component {
   static propTypes = {
     combination: PropTypes.string.isRequired,
     onPress: PropTypes.oneOfType([PropTypes.func, PropTypes.string]).isRequired,
     children: PropTypes.element.isRequired,
+
+    // from Context
     disabled: PropTypes.bool.isRequired,
     showTooltip: PropTypes.bool.isRequired,
     tooltipOptions: PropTypes.object.isRequired,
@@ -43,9 +45,10 @@ class HotkeyInner extends React.Component {
     if (isFunction(onPress)) return onPress(evt);
 
     if (!isFunction(this.child.current[onPress])) {
-      return new Error(ERROR_MESSAGES.METHOD_NOT_FOUND_IN_CHILD);
+      throw new Error(
+        `ERROR: The method of ${onPress} is not present in the DOMNode of the child, please check render.`,
+      );
     }
-
     return this.child.current[onPress](evt);
   };
 
@@ -57,12 +60,12 @@ class HotkeyInner extends React.Component {
       showTooltip,
       tooltipOptions,
     } = this.props;
-
+    const open = showTooltip && !disabled;
     return (
       <Tooltip
         {...tooltipOptions}
         title={combination.toUpperCase()}
-        open={showTooltip && !disabled}
+        open={open}
         trigger="manual"
         multiple
       >

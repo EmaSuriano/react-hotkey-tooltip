@@ -57,7 +57,7 @@
   "jest": {
     "setupFiles": [
       "raf/polyfill",
-      "<rootDir>/test-setup.js"
+      "<rootDir>/test-setup"
     ],
     "transform": {
       "^.+\\.js$": "<rootDir>/jest.transform.js"
