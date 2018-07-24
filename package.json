@@ -62,9 +62,6 @@
     "transform": {
       "^.+\\.js$": "<rootDir>/jest.transform.js"
     },
-    "transformIgnorePatterns": [
-      "^.+\\.css$"
-    ],
     "moduleDirectories": [
       "node_modules"
     ],
