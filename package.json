@@ -31,7 +31,7 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "commitizen": "^2.9.6",
-    "docz-plugin-css": "^0.7.1",
+    "docz-plugin-css": "^0.9.0",
     "docz": "^0.7.1",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
