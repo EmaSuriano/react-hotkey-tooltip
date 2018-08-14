@@ -9,5 +9,5 @@ export default {
   themeConfig: {
     mode: 'light',
   },
-  hashRouter: true,
+  repository: 'https://github.com/EmaSuriano/react-hotkey-tooltip',
 };
