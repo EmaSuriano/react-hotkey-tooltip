@@ -34,7 +34,7 @@
     "docz": "^0.10.2",
     "docz-plugin-css": "^0.10.2",
     "docz-theme-default": "^0.10.2",
-    "enzyme": "^3.4.4",
+    "enzyme": "^3.5.0",
     "enzyme-adapter-react-16": "^1.2.0",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^17.0.0",
