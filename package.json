@@ -32,7 +32,7 @@
     "babel-preset-react": "^6.24.1",
     "commitizen": "^2.9.6",
     "docz": "^0.10.2",
-    "docz-plugin-css": "^0.10.2",
+    "docz-plugin-css": "^0.11.0",
     "docz-theme-default": "^0.10.2",
     "enzyme": "^3.4.4",
     "enzyme-adapter-react-16": "^1.2.0",
