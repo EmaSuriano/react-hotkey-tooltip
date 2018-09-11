@@ -1,6 +1,6 @@
 {
   "name": "react-hotkey-tooltip",
-  "version": "3.0.0",
+  "version": "3.0.2",
   "description": "React component that creates hotkeys for your components and shows a tooltip of it",
   "main": "lib/index.js",
   "module": "es/index.js",
