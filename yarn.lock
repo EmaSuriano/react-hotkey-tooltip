@@ -192,13 +192,6 @@
   dependencies:
     "@babel/types" "^7.0.0"
 
-"@babel/helper-module-imports@7.0.0-beta.51":
-  version "7.0.0-beta.51"
-  resolved "https://registry.yarnpkg.com/@babel/helper-module-imports/-/helper-module-imports-7.0.0-beta.51.tgz#ce00428045fbb7d5ebc0ea7bf835789f15366ab2"
-  dependencies:
-    "@babel/types" "7.0.0-beta.51"
-    lodash "^4.17.5"
-
 "@babel/helper-module-imports@^7.0.0":
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/@babel/helper-module-imports/-/helper-module-imports-7.0.0.tgz#96081b7111e486da4d2cd971ad1a4fe216cc2e3d"
@@ -999,14 +992,6 @@
     debug "^3.1.0"
     globals "^11.1.0"
     lodash "^4.17.10"
-
-"@babel/types@7.0.0-beta.51":
-  version "7.0.0-beta.51"
-  resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.0.0-beta.51.tgz#d802b7b543b5836c778aa691797abf00f3d97ea9"
-  dependencies:
-    esutils "^2.0.2"
-    lodash "^4.17.5"
-    to-fast-properties "^2.0.0"
 
 "@babel/types@^7.0.0":
   version "7.0.0"
@@ -2279,24 +2264,6 @@ babel-plugin-emotion@^9.2.10:
     mkdirp "^0.5.1"
     source-map "^0.5.7"
     touch "^2.0.1"
-
-babel-plugin-emotion@^9.2.8:
-  version "9.2.8"
-  resolved "https://registry.yarnpkg.com/babel-plugin-emotion/-/babel-plugin-emotion-9.2.8.tgz#4df55ef10625c391f25b031f7e3006abac359e09"
-  dependencies:
-    "@babel/helper-module-imports" "7.0.0-beta.51"
-    "@emotion/babel-utils" "^0.6.4"
-    "@emotion/hash" "^0.6.2"
-    "@emotion/memoize" "^0.6.1"
-    "@emotion/stylis" "^0.7.0"
-    babel-core "^6.26.3"
-    babel-plugin-macros "^2.0.0"
-    babel-plugin-syntax-jsx "^6.18.0"
-    convert-source-map "^1.5.0"
-    find-root "^1.1.0"
-    mkdirp "^0.5.1"
-    source-map "^0.5.7"
-    touch "^1.0.0"
 
 babel-plugin-inferno@4.0.0:
   version "4.0.0"
@@ -5063,7 +5030,7 @@ doctrine@^2.0.0, doctrine@^2.1.0:
   dependencies:
     esutils "^2.0.2"
 
-docz-core@^0.11.0, docz-core@^0.11.2:
+docz-core@^0.11.0:
   version "0.11.2"
   resolved "https://registry.yarnpkg.com/docz-core/-/docz-core-0.11.2.tgz#49ea5f827a9f94a78b8b980984312396fa4a53dc"
   dependencies:
@@ -5231,35 +5198,6 @@ docz-plugin-css@^0.11.0:
     webpack "^4.17.1"
     webpack-chain "^4.9.0"
 
-docz-theme-default@^0.11.2:
-  version "0.11.2"
-  resolved "https://registry.yarnpkg.com/docz-theme-default/-/docz-theme-default-0.11.2.tgz#288bd7fb5b67467c685460dc18b1ea0eb2e2ce40"
-  dependencies:
-    codemirror "^5.40.0"
-    copy-text-to-clipboard "^1.0.4"
-    docz "^0.11.2"
-    emotion "^9.2.8"
-    emotion-theming "^9.2.6"
-    facepaint "^1.2.1"
-    hotkeys-js "^3.3.7"
-    lodash.get "^4.4.2"
-    match-sorter "^2.3.0"
-    polished "^2.0.3"
-    pretty "^2.0.0"
-    prop-types "15.6.2"
-    re-resizable "^4.8.1"
-    react "^16.5.0"
-    react-codemirror2 "^5.1.0"
-    react-dom "^16.5.0"
-    react-emotion "^9.2.8"
-    react-feather "^1.1.3"
-    react-lightweight-tooltip "^1.0.0"
-    react-live "^1.11.0"
-    react-perfect-scrollbar "^1.2.0"
-    react-powerplug "^1.0.0-rc.1"
-    react-sizes "^1.0.4"
-    webfontloader "^1.6.28"
-
 docz-theme-default@^0.12.5:
   version "0.12.5"
   resolved "https://registry.yarnpkg.com/docz-theme-default/-/docz-theme-default-0.12.5.tgz#49ee983d23d950bbef0e19e8b99a51434ff18273"
@@ -5316,28 +5254,6 @@ docz-utils@^0.12.2:
     unist-util-find "^1.0.1"
     unist-util-is "^2.1.2"
     unist-util-visit "^1.4.0"
-
-docz@^0.11.2:
-  version "0.11.2"
-  resolved "https://registry.yarnpkg.com/docz/-/docz-0.11.2.tgz#e5293e0f5fc8ee19b2191514837240acb6590223"
-  dependencies:
-    "@mdx-js/tag" "^0.15.0"
-    "@sindresorhus/slugify" "^0.3.0"
-    array-sort "^1.0.0"
-    capitalize "^1.0.0"
-    create-react-context "^0.2.3"
-    deepmerge "^2.1.1"
-    docz-core "^0.11.2"
-    docz-theme-default "^0.11.2"
-    prop-types "^15.6.2"
-    react "^16.5.0"
-    react-copy-write "^0.8.0"
-    react-dom "^16.5.0"
-    react-imported-component "^4.6.2"
-    react-router "^4.3.1"
-    react-router-dom "^4.3.1"
-    react-router-hash-link "^1.2.0"
-    yargs "^12.0.1"
 
 docz@^0.12.5:
   version "0.12.5"
@@ -5547,24 +5463,11 @@ emojis-list@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/emojis-list/-/emojis-list-2.1.0.tgz#4daa4d9db00f9819880c79fa457ae5b09a1fd389"
 
-emotion-theming@^9.2.6:
-  version "9.2.6"
-  resolved "https://registry.yarnpkg.com/emotion-theming/-/emotion-theming-9.2.6.tgz#ca69b94e28f66a5d9ca1e259633246beaa24afbc"
-  dependencies:
-    hoist-non-react-statics "^2.3.1"
-
 emotion-theming@^9.2.9:
   version "9.2.9"
   resolved "https://registry.yarnpkg.com/emotion-theming/-/emotion-theming-9.2.9.tgz#2bfd77fdd47d3f5e60d59d97dd4cea4622657220"
   dependencies:
     hoist-non-react-statics "^2.3.1"
-
-emotion@^9.2.8:
-  version "9.2.8"
-  resolved "https://registry.yarnpkg.com/emotion/-/emotion-9.2.8.tgz#b89e754be1a109f4e47ff0031928f94e40d7984a"
-  dependencies:
-    babel-plugin-emotion "^9.2.8"
-    create-emotion "^9.2.6"
 
 emotion@^9.2.9:
   version "9.2.10"
@@ -9269,7 +9172,7 @@ lodash.uniq@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
 
-lodash@4.17.11:
+lodash@4.17.11, lodash@^4.17.11:
   version "4.17.11"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
 
@@ -9280,10 +9183,6 @@ lodash@4.17.11:
 lodash@^3.8.0:
   version "3.10.1"
   resolved "http://registry.npmjs.org/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
-
-lodash@^4.17.11:
-  version "4.17.11"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
 
 log-symbols@^2.1.0, log-symbols@^2.2.0:
   version "2.2.0"
@@ -11709,7 +11608,7 @@ prompts@^0.1.9:
     kleur "^2.0.1"
     sisteransi "^0.1.1"
 
-prop-types@*, prop-types@15.6.2, prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2:
+prop-types@15.6.2, prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2:
   version "15.6.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.2.tgz#05d5ca77b4453e985d60fc7ff8c859094a497102"
   dependencies:
@@ -11919,10 +11818,6 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.2.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-re-resizable@^4.8.1:
-  version "4.8.1"
-  resolved "https://registry.yarnpkg.com/re-resizable/-/re-resizable-4.8.1.tgz#1edc294e7ba9effcd31c2a134d9f825d62c1ec6c"
-
 re-resizable@^4.9.0:
   version "4.9.0"
   resolved "https://registry.yarnpkg.com/re-resizable/-/re-resizable-4.9.0.tgz#0160728b9d7e32371fb26562221678ae643e6557"
@@ -11991,7 +11886,7 @@ react-docgen@^3.0.0-rc.1:
     node-dir "^0.1.10"
     recast "^0.15.0"
 
-react-dom@^16.2.0, react-dom@^16.3.1, react-dom@^16.5.0:
+react-dom@^16.2.0:
   version "16.5.0"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.5.0.tgz#57704e5718669374b182a17ea79a6d24922cb27d"
   dependencies:
@@ -12008,13 +11903,6 @@ react-dom@^16.5.2:
     object-assign "^4.1.1"
     prop-types "^15.6.2"
     schedule "^0.5.0"
-
-react-emotion@^9.2.8:
-  version "9.2.8"
-  resolved "https://registry.yarnpkg.com/react-emotion/-/react-emotion-9.2.8.tgz#e4e24540bdcb7daacf87c405760ed619bddbb61b"
-  dependencies:
-    babel-plugin-emotion "^9.2.8"
-    create-emotion-styled "^9.2.8"
 
 react-emotion@^9.2.9:
   version "9.2.10"
@@ -12091,15 +11979,6 @@ react-live@^1.11.0:
     prop-types "^15.5.8"
     unescape "^0.2.0"
 
-react-perfect-scrollbar@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/react-perfect-scrollbar/-/react-perfect-scrollbar-1.2.0.tgz#1e241e7382e237211c090767b79c61850c48c325"
-  dependencies:
-    perfect-scrollbar "^1.3.0"
-    prop-types "*"
-    react "^16.3.1"
-    react-dom "^16.3.1"
-
 react-perfect-scrollbar@^1.2.1:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/react-perfect-scrollbar/-/react-perfect-scrollbar-1.2.2.tgz#1193909d5efbf0b877e24cdc07e7b3d1ee717e52"
@@ -12166,8 +12045,8 @@ react-test-renderer@^16.0.0-0:
     schedule "^0.3.0"
 
 react-tippy@^1.2.2:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/react-tippy/-/react-tippy-1.2.2.tgz#061467d34d29e7a5a9421822d125c451d6bb5153"
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/react-tippy/-/react-tippy-1.2.3.tgz#8aef183ec4986ca7c5c556465013d95196fecfd8"
   dependencies:
     popper.js "^1.11.1"
 
@@ -12182,7 +12061,7 @@ react-transform-hmr@1.0.4:
     global "^4.3.0"
     react-proxy "^1.1.7"
 
-react@^16.2.0, react@^16.3.1, react@^16.5.0:
+react@^16.2.0:
   version "16.5.0"
   resolved "https://registry.yarnpkg.com/react/-/react-16.5.0.tgz#f2c1e754bf9751a549d9c6d9aca41905beb56575"
   dependencies:
@@ -14215,12 +14094,6 @@ toidentifier@1.0.0:
 toposort@^1.0.0:
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/toposort/-/toposort-1.0.7.tgz#2e68442d9f64ec720b8cc89e6443ac6caa950029"
-
-touch@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/touch/-/touch-1.0.0.tgz#449cbe2dbae5a8c8038e30d71fa0ff464947c4de"
-  dependencies:
-    nopt "~1.0.10"
 
 touch@^2.0.1:
   version "2.0.2"
