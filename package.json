@@ -46,7 +46,7 @@
     "nwb-sass": "^0.9.0",
     "postcss": "^7.0.0",
     "raf": "^3.4.0",
-    "react": "^16.6.3",
+    "react": "^16.7.0",
     "react-dom": "^16.6.3",
     "react-github-corner": "^2.1.0"
   },
