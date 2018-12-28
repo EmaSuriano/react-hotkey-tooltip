@@ -1,21 +1,23 @@
 ---
-name: Advanced Examples
-route: /advanced-examples
+name: Controlled Radio Button
+route: /controlled-radio-button
+menu: Examples
 ---
 
-import { Playground, PropsTable  } from 'docz'
-import RadioButtonControlledHotkey from './RadioButtonControlledHotkey'
+import { Playground, PropsTable } from 'docz';
+import RadioButtonControlledHotkey from './RadioButtonControlledHotkey';
 
+# Examples
 
-# Advanced Examples
+## Controlled Radio Button
 
-## Radio Button controlled by Hotkeys
+In this example the user can select any of the options in the radio buttons by pressing `1`, `2` or `3`, and then submit the form by pressing `SPACE`. Remember that in any time you can see the hotkeys present in the screen by pressing `shift+h`!
 
-In this example the user can select any of the options in the radio buttons by pressing `1`, `2` or `3`, and then submit the form by pressing `SPACE`. Remember that in any time you can see the hotkeys present in the screen by pressing `shift+h`! 
+<Playground>
+  <RadioButtonControlledHotkey />
+</Playground>
 
-<RadioButtonControlledHotkey />
-
-``` javascript
+```javascript
 class RadioButtonControlledHotkey extends Component {
   state = {
     selectedRadio: '1',
@@ -100,5 +102,4 @@ class RadioButtonControlledHotkey extends Component {
     );
   }
 }
-
 ```

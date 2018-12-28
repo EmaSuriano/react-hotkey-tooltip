@@ -1,12 +1,12 @@
 ---
 name: HotkeyProvider
 route: /hotkey-provider
+menu: Components
 ---
 
-import { Playground, PropsTable  } from 'docz'
+import { Playground, PropsTable } from 'docz';
 import { Hotkey, HotkeyProvider } from '../src';
 import NextSection from './helpersComponents/NextSection';
-
 
 # HotkeyProvider
 
@@ -18,14 +18,14 @@ import NextSection from './helpersComponents/NextSection';
 
 The idea of this component is to tell to all the Hotkeys when to display the tooltip and also how it has to look like. Therefore, just by having one `HotkeyProvider` in your application is enough!
 
-``` javascript
+```javascript
 <HotkeyProvider>
   <App />
 </HotkeyProvider>
 ```
 
 <Playground>
-  <HotkeyProvider >
+  <HotkeyProvider>
     <Hotkey onPress="focus" combination="a">
       <button>Focus me!</button>
     </Hotkey>
@@ -43,7 +43,7 @@ The idea of this component is to tell to all the Hotkeys when to display the too
 ### Disabling Hotkeys
 
 <Playground>
-  <HotkeyProvider tooltipCombination="shift+d" disabled >
+  <HotkeyProvider tooltipCombination="shift+d" disabled>
     <Hotkey onPress="focus" combination="q">
       <button>Can't Focus me :(</button>
     </Hotkey>
@@ -55,20 +55,20 @@ The idea of this component is to tell to all the Hotkeys when to display the too
 
 ### Theming tooltip
 
-### Disabling Hotkeys
-
 <Playground>
   <HotkeyProvider tooltipCombination="shift+s">
-    <Hotkey onPress="focus" combination="s" tooltipOptions={{
-          theme: 'light',
-          size: 'big',
-          arrow: true,
-        }}>
+    <Hotkey
+      onPress="focus"
+      combination="s"
+      tooltipOptions={{
+        theme: 'light',
+        size: 'big',
+        arrow: true,
+      }}
+    >
       <button>Special tooltip!</button>
     </Hotkey>
   </HotkeyProvider>
 </Playground>
 
 <NextSection url="/hotkey" name="Hotkey" />
-
-

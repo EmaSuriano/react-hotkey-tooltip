@@ -1,12 +1,12 @@
 ---
 name: Hotkey
 route: /hotkey
+menu: Components
 ---
 
-import { Playground, PropsTable  } from 'docz'
+import { Playground, PropsTable } from 'docz';
 import { Hotkey, HotkeyProvider } from '../src';
 import NextSection from './helpersComponents/NextSection';
-
 
 # Hotkey
 
@@ -17,17 +17,17 @@ import NextSection from './helpersComponents/NextSection';
 ## Basic Usage
 
 Component responsible for positioning the tooltip in the application and calling the action.
-  
+
   <HotkeyProvider>
 
 <Playground>
   <Hotkey onPress="click" combination="a">
-    <button onClick={() => console.log("you have click me")}>Click me!</button>
+    <button onClick={() => console.log('you have click me')}>Click me!</button>
   </Hotkey>
   <Hotkey onPress="focus" combination="b">
     <button>Focus me!</button>
   </Hotkey>
-  <Hotkey onPress={() => alert("Accessed by hotkey")} combination="c">
+  <Hotkey onPress={() => alert('Accessed by hotkey')} combination="c">
     <button>I work only with hotkey</button>
   </Hotkey>
 </Playground>
@@ -38,25 +38,27 @@ Component responsible for positioning the tooltip in the application and calling
 
 <Playground>
   <Hotkey onPress="focus" combination="d" disabled>
-      <button>Can't focus with hotkey :/</button>
-    </Hotkey>
-    <Hotkey onPress="focus" combination="f">
-      <button>Focus me!</button>
-    </Hotkey>
+    <button>Can't focus with hotkey :/</button>
+  </Hotkey>
+  <Hotkey onPress="focus" combination="f">
+    <button>Focus me!</button>
+  </Hotkey>
 </Playground>
-
-
 
 ### Theming tooltip
 
 <Playground>
-    <Hotkey onPress="focus" combination="s" tooltipOptions={{
-          theme: 'light',
-          size: 'big',
-          arrow: true,
-        }}>
-      <button>Special tooltip!</button>
-    </Hotkey>
+  <Hotkey
+    onPress="focus"
+    combination="s"
+    tooltipOptions={{
+      theme: 'light',
+      size: 'big',
+      arrow: true,
+    }}
+  >
+    <button>Special tooltip!</button>
+  </Hotkey>
 </Playground>
 
 </HotkeyProvider>

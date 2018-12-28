@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "mousetrap": "^1.6.1",
+    "prop-types": "^15.6.2",
     "react-tippy": "^1.2.2"
   },
   "peerDependencies": {
@@ -31,9 +32,9 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "commitizen": "^3.0.0",
-    "docz": "^0.12.5",
+    "docz": "^0.13.7",
     "docz-plugin-css": "^0.11.0",
-    "docz-theme-default": "^0.12.5",
+    "docz-theme-default": "^0.13.7",
     "enzyme": "^3.6.0",
     "enzyme-adapter-react-16": "^1.5.0",
     "eslint": "^4.19.1",
