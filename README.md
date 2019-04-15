@@ -31,7 +31,7 @@ This library will help you by declaring global hotkeys that automatically will b
 
 ## Built with
 
-Why mess up with document.addEventListener or positioning/styling tooltips if there are a lot of open source libraries that can do that for me. This are the chosen ones!
+Why mess up with document.addEventListener or positioning/styling tooltips if there are a lot of open source libraries that can do that for me. These are the chosen ones!
 
 - [mousetrap](https://github.com/ccampbell/mousetrap): to bind and unbind hotkeys globally 🌐
 - [react-tippy](https://github.com/tvkhoa/react-tippy): to display beautiful tooltips 😄
