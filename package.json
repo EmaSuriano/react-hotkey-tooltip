@@ -34,7 +34,7 @@
     "commitizen": "^3.0.0",
     "docz": "^0.13.7",
     "docz-plugin-css": "^0.11.0",
-    "docz-theme-default": "^0.13.7",
+    "docz-theme-default": "^1.1.0",
     "enzyme": "^3.6.0",
     "enzyme-adapter-react-16": "^1.5.0",
     "eslint": "^5.14.0",
