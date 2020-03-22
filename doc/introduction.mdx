@@ -5,7 +5,6 @@ order: 1
 ---
 
 import { Hotkey, HotkeyProvider } from '../src';
-import NextSection from './helpersComponents/NextSection';
 import logo from './media/logo.png'
 
 # Introduction
@@ -40,7 +39,7 @@ Why mess up with `document.addEventListener` or positioning/styling tooltips if 
 By pressing `shift+h` a tooltip will be displayed with the hotkey of the button. Then by pressing `a` it will the `click` event of the button 🎉
 
 <div style={{ textAlign: 'center '}}>
-     <HotkeyProvider>
+  <HotkeyProvider>
     <Hotkey combination="a" onPress="click">
       <button onClick={() => alert('You have clicked me!')}>Click me using your keyboard!</button>
     </Hotkey>
@@ -55,4 +54,3 @@ MIT. Also check react-tippy.js' and mousetrap' license.
 
 I'm open to any Pull Request to improve this library, the idea is to help the community!
 
-<NextSection url="/getting-started" name="Getting Started"/>
