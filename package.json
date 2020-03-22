@@ -16,7 +16,7 @@
     "docz:build": "docz build",
     "test": "jest --coverage",
     "test:watch": "jest --watch",
-    "lint": "eslint ./src"
+    "lint": "eslint ./src --ext tsx,ts"
   },
   "dependencies": {
     "mousetrap": "^1.6.1",
