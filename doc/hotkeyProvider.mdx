@@ -4,25 +4,14 @@ route: /hotkey-provider
 menu: Components
 ---
 
-import { Playground, PropsTable } from 'docz';
+import { Playground, Props } from 'docz';
 import { Hotkey, HotkeyProvider } from '../src';
-import NextSection from './helpersComponents/NextSection';
 
 # HotkeyProvider
 
-## Properties
-
-<PropsTable of={HotkeyProvider} />
-
-## Basic Usage
-
 The idea of this component is to tell to all the Hotkeys when to display the tooltip and also how it has to look like. Therefore, just by having one `HotkeyProvider` in your application is enough!
 
-```javascript
-<HotkeyProvider>
-  <App />
-</HotkeyProvider>
-```
+<Props of={HotkeyProvider} />
 
 <Playground>
   <HotkeyProvider>
@@ -40,10 +29,26 @@ The idea of this component is to tell to all the Hotkeys when to display the too
 
 ## Advanced Usage
 
+### Changing tooltip combination
+
+<Playground>
+  <HotkeyProvider tooltipCombination="shift+ctrl+h">
+    <Hotkey onPress="focus" combination="a">
+      <button>Focus me!</button>
+    </Hotkey>
+    <Hotkey onPress="focus" combination="b">
+      <button>Focus me!</button>
+    </Hotkey>
+    <Hotkey onPress="focus" combination="c">
+      <button>Focus me!</button>
+    </Hotkey>
+  </HotkeyProvider>
+</Playground>
+
 ### Disabling Hotkeys
 
 <Playground>
-  <HotkeyProvider tooltipCombination="shift+d" disabled>
+  <HotkeyProvider disabled>
     <Hotkey onPress="focus" combination="q">
       <button>Can't Focus me :(</button>
     </Hotkey>
@@ -70,5 +75,3 @@ The idea of this component is to tell to all the Hotkeys when to display the too
     </Hotkey>
   </HotkeyProvider>
 </Playground>
-
-<NextSection url="/hotkey" name="Hotkey" />

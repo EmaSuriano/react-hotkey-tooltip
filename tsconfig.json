@@ -9,5 +9,16 @@
     "moduleResolution": "node",
     "jsx": "preserve"
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*"],
+  "exclude": [
+    "node_modules",
+    "es",
+    "lib",
+    "*.spec.ts",
+    "*.spec.tsx",
+    "*.test.ts",
+    "*.test.tsx",
+    "*.stories.ts",
+    "*.stories.tsx"
+  ]
 }

@@ -1,9 +1,10 @@
 import { createContext } from 'react';
+import { TippyProps } from '@tippyjs/react';
 
 export type HotKeyContext = {
   showTooltip: boolean;
   disabled: boolean;
-  tooltipOptions: any;
+  tooltipOptions: TippyProps;
 };
 
 const HotKeyContext = createContext<HotKeyContext>({

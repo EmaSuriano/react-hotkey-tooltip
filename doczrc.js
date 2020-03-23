@@ -1,11 +1,6 @@
-// import { css } from 'docz-plugin-css';
-
 export default {
-  // plugins: [
-  //   css({
-  //     preprocessor: 'postcss',
-  //   }),
-  // ],
+  files: 'doc/**/*.{md,markdown,mdx}',
+
   typescript: true,
   repository: 'https://github.com/EmaSuriano/react-hotkey-tooltip',
 };

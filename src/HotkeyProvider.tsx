@@ -9,52 +9,63 @@ export const KEYBOARD_EVENT = {
   KEY_UP: 'keyup',
 };
 
-type Props = {
+type HotkeyProviderProps = {
+  /** Disabled all Hotkeys */
   disabled?: boolean;
+  /** Options passed to react-tippy */
   tooltipOptions?: TippyProps;
+  /** Key combination to trigger the tooltips */
   tooltipCombination?: string;
+  /** Your React components */
   children: React.ReactNode;
 };
 
+/**
+ * The Top wrapper component that handles when to show the Tooltips and globally disabled them.
+ * Please be aware that hotkeys don't work inside Storybook Docs view ...
+ * */
 const HotkeyProvider = ({
   disabled = false,
   tooltipOptions = {},
   tooltipCombination = 'shift+h',
   children,
-}: Props) => {
+}: HotkeyProviderProps) => {
   const [tooltipVisible, setTooltipVisible] = React.useState(false);
-  const [currentCombination, setCurrentCombination] = useState('');
+  const [currentCombination, setCurrentCombination] = useState(
+    tooltipCombination,
+  );
 
   const changeTooltipVisibility = (on: boolean) => () => {
-    if (on === tooltipVisible || disabled) return;
-    setTooltipVisible(true);
+    if (disabled) setTooltipVisible(false);
+    setTooltipVisible(on);
   };
+
+  useEffect(() => {
+    bindCombination(currentCombination, changeTooltipVisibility, true);
+  }, []);
 
   useEffect(() => {
     const oldCombination = currentCombination;
     setCurrentCombination(tooltipCombination);
 
-    const combinationHasChanged = oldCombination !== currentCombination;
-    if (combinationHasChanged) {
-      const isFirstTime = currentCombination === '';
-      if (!isFirstTime) {
-        unbindCombination(oldCombination, true);
-      }
-
-      bindCombination(oldCombination, changeTooltipVisibility, true);
+    if (oldCombination !== currentCombination) {
+      unbindCombination(oldCombination, true);
+      bindCombination(currentCombination, changeTooltipVisibility, true);
     }
 
     return () => unbindCombination(currentCombination, true);
   }, [tooltipCombination]);
 
-  const value = {
-    showTooltip: tooltipVisible && !disabled,
+  const contextValue = {
+    showTooltip: tooltipVisible,
     disabled,
     tooltipOptions,
   };
 
   return (
-    <HotkeyContext.Provider value={value}>{children}</HotkeyContext.Provider>
+    <HotkeyContext.Provider value={contextValue}>
+      {children}
+    </HotkeyContext.Provider>
   );
 };
 

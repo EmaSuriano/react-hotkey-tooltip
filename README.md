@@ -1,6 +1,5 @@
 # React Hotkey Tooltip
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/EmaSuriano/react-hotkey-tooltip.svg)](https://greenkeeper.io/)
 [![Travis badge](https://api.travis-ci.org/EmaSuriano/react-hotkey-tooltip.svg)](https://travis-ci.org/EmaSuriano/react-hotkey-tooltip)
 [![npm version](https://badge.fury.io/js/react-hotkey-tooltip.svg)](https://badge.fury.io/js/react-hotkey-tooltip)
 [![Coverage Status](https://coveralls.io/repos/github/EmaSuriano/react-hotkey-tooltip/badge.svg?branch=master)](https://coveralls.io/github/EmaSuriano/react-hotkey-tooltip?branch=master)
@@ -23,7 +22,7 @@
 
 When working with hotkeys in a React application we will find many problems when trying to implement it:
 
-- Hotkeys are only accesible inside a specific component (not globally).
+- Hotkeys are only accessible inside a specific component (not globally).
 - Must take care of the hotkeys manually throughout the life cycle.
 - Have to provide a way so the user can see all the hotkeys on the screen.
 

@@ -1,13 +1,15 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState, useRef } from 'react';
 import Tooltip from '@tippyjs/react';
 import HotKeyContext from './HotkeyContext';
 import { bindCombination, unbindCombination } from './events';
+
+type Handler = (evt: EventTarget) => void;
 
 type Props = {
   disabled?: boolean;
   children: React.ReactElement;
   combination: string;
-  onPress: (evt: EventTarget) => any | string;
+  onPress: string | Handler;
 };
 
 const Hotkey = ({ disabled, children, combination, onPress }: Props) => {
@@ -16,49 +18,45 @@ const Hotkey = ({ disabled, children, combination, onPress }: Props) => {
   );
 
   const [currentCombination, setCurrentCombination] = useState(combination);
-  const elementRef = React.createRef<Element>();
-
+  const elementRef = useRef<Element>();
   const onPressHotkey = (evt: EventTarget) => {
-    if (disabled) return false;
+    if (disabled || groupDisabled) return false;
 
     if (typeof onPress === 'function') return onPress(evt);
 
     if (elementRef && elementRef.current) {
-      const eventHandler = elementRef.current[onPress];
-      if (typeof eventHandler === 'function') {
-        (eventHandler as Function)(evt);
+      if (typeof elementRef.current[onPress] !== 'function') {
+        throw new Error(
+          `ERROR: The method of ${onPress} is not present in the DOMNode of the child, please check render.`,
+        );
       }
 
-      console.error(
-        `ERROR: The method of ${onPress} is not present in the DOMNode of the child, please check render.`,
-      );
+      (elementRef.current[onPress] as Function)();
     }
   };
+
+  useEffect(() => {
+    bindCombination(currentCombination, onPressHotkey);
+  }, []);
 
   useEffect(() => {
     const oldCombination = currentCombination;
     setCurrentCombination(combination);
 
-    const combinationHasChanged = oldCombination !== currentCombination;
-    if (combinationHasChanged) {
-      const isFirstTime = currentCombination === '';
-      if (!isFirstTime) {
-        unbindCombination(oldCombination);
-      }
-
-      bindCombination(oldCombination, onPressHotkey);
+    if (oldCombination !== currentCombination) {
+      unbindCombination(oldCombination);
+      bindCombination(currentCombination, onPressHotkey);
     }
 
     return () => unbindCombination(currentCombination);
   }, [combination]);
 
-  const visible = showTooltip && !disabled;
+  const visible = showTooltip && !(disabled || groupDisabled);
+
   return (
     <Tooltip
       {...tooltipOptions}
       content={currentCombination.toUpperCase()}
-      trigger="manual"
-      disabled={disabled || groupDisabled}
       visible={visible}
     >
       {React.cloneElement(children, {
