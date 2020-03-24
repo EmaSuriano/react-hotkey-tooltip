@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState, useRef } from 'react';
+import React, { useContext, useEffect, useRef, createRef } from 'react';
 import Tooltip from '@tippyjs/react';
 import HotKeyContext from './HotkeyContext';
 import { bindCombination, unbindCombination } from './events';
@@ -12,13 +12,23 @@ type Props = {
   onPress: string | Handler;
 };
 
+function usePrevious<T>(value: T) {
+  const ref = useRef<T>();
+  useEffect(() => {
+    ref.current = value;
+  });
+  return ref.current;
+}
+
 const Hotkey = ({ disabled, children, combination, onPress }: Props) => {
   const { disabled: groupDisabled, showTooltip, tooltipOptions } = useContext(
     HotKeyContext,
   );
 
-  const [currentCombination, setCurrentCombination] = useState(combination);
+  // const [currentCombination, setCurrentCombination] = useState(combination);
   const elementRef = useRef<Element>();
+  const previousCombination = usePrevious(combination);
+
   const onPressHotkey = (evt: EventTarget) => {
     if (disabled || groupDisabled) return false;
 
@@ -36,19 +46,16 @@ const Hotkey = ({ disabled, children, combination, onPress }: Props) => {
   };
 
   useEffect(() => {
-    bindCombination(currentCombination, onPressHotkey);
+    bindCombination(combination, onPressHotkey);
   }, []);
 
   useEffect(() => {
-    const oldCombination = currentCombination;
-    setCurrentCombination(combination);
-
-    if (oldCombination !== currentCombination) {
-      unbindCombination(oldCombination);
-      bindCombination(currentCombination, onPressHotkey);
+    if (previousCombination && combination !== previousCombination) {
+      unbindCombination(previousCombination);
+      bindCombination(combination, onPressHotkey);
     }
 
-    return () => unbindCombination(currentCombination);
+    return () => unbindCombination(combination);
   }, [combination]);
 
   const visible = showTooltip && !(disabled || groupDisabled);
@@ -56,7 +63,7 @@ const Hotkey = ({ disabled, children, combination, onPress }: Props) => {
   return (
     <Tooltip
       {...tooltipOptions}
-      content={currentCombination.toUpperCase()}
+      content={combination.toUpperCase()}
       visible={visible}
     >
       {React.cloneElement(children, {
