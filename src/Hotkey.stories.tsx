@@ -23,6 +23,17 @@ export const Default = () => (
   </div>
 );
 
+export const WithNoStorybook = () => (
+  <div>
+    <Hotkey onPress="focus" combination="a">
+      <button>Press A to focus me!</button>
+    </Hotkey>
+    <Hotkey onPress="focus" combination="b">
+      <button>Press B to focus me!</button>
+    </Hotkey>
+  </div>
+);
+
 export const Disabled = () => (
   <div>
     <HotkeyProvider>
@@ -39,16 +50,9 @@ export const Disabled = () => (
 
 export const SpecialCallback = () => {
   const [toggle, setToggle] = React.useState(false);
-  console.log(toggle);
   return (
     <HotkeyProvider>
-      <Hotkey
-        onPress={() => {
-          console.log(toggle);
-          setToggle(!toggle);
-        }}
-        combination="a"
-      >
+      <Hotkey onPress={() => setToggle(!toggle)} combination="a">
         <div style={{ color: toggle ? 'green' : 'red' }}>Toggle</div>
       </Hotkey>
       <p>Change the Toggle by pressing A</p>

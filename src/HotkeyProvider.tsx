@@ -22,7 +22,6 @@ type HotkeyProviderProps = {
 
 /**
  * The Top wrapper component that handles when to show the Tooltips and globally disabled them.
- * Please be aware that hotkeys don't work inside Storybook Docs view ...
  * */
 const HotkeyProvider = ({
   disabled = false,

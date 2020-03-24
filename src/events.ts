@@ -35,12 +35,7 @@ export const bindCombination = (
   hold?: boolean,
 ) => {
   if (hold) {
-    mousetrap.bind(
-      combination,
-      // throttle(() => cb(true), 10),
-      cb(true),
-      'keydown',
-    );
+    mousetrap.bind(combination, cb(true), 'keydown');
     mousetrap.bind(combination, cb(false), 'keyup');
     return;
   }
