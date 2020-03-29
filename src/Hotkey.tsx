@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, createRef } from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
 import Tooltip from '@tippyjs/react';
 import HotKeyContext from './HotkeyContext';
 import { bindCombination, unbindCombination } from './events';
@@ -9,6 +9,7 @@ type Props = {
   disabled?: boolean;
   children: React.ReactElement;
   combination: string;
+  // @default: 3
   onPress: string | Handler;
 };
 
@@ -41,7 +42,7 @@ const Hotkey = ({ disabled, children, combination, onPress }: Props) => {
         );
       }
 
-      (elementRef.current[onPress] as Function)();
+      (elementRef.current[onPress] as Function)(evt);
     }
   };
 

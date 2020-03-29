@@ -1,6 +1,6 @@
 module.exports = {
   stories: ['../src/**/*.stories.tsx'],
-  addons: ['@storybook/addon-docs'],
+  addons: ['@storybook/addon-notes/register-panel'],
 
   webpackFinal: async (config) => {
     config.module.rules.push({

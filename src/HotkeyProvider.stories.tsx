@@ -1,7 +1,5 @@
 import React from 'react';
 import { Hotkey, HotkeyProvider } from '.';
-import 'tippy.js/dist/tippy.css';
-import 'tippy.js/animations/scale.css';
 
 export default {
   title: 'HotkeyProvider',
@@ -12,32 +10,28 @@ export default {
 };
 
 export const Default = () => (
-  <div>
-    <HotkeyProvider>
-      <Hotkey onPress="focus" combination="a">
-        <button>Focus me!</button>
-      </Hotkey>
-      <Hotkey onPress="focus" combination="b">
-        <button>Focus me!</button>
-      </Hotkey>
-      <Hotkey onPress="focus" combination="c">
-        <button>Focus me!</button>
-      </Hotkey>
-    </HotkeyProvider>
-  </div>
+  <HotkeyProvider>
+    <Hotkey onPress="focus" combination="a">
+      <button>Focus me!</button>
+    </Hotkey>
+    <Hotkey onPress="focus" combination="b">
+      <button>Focus me!</button>
+    </Hotkey>
+    <Hotkey onPress="focus" combination="c">
+      <button>Focus me!</button>
+    </Hotkey>
+  </HotkeyProvider>
 );
 
 export const AllHotkeysDisabled = () => (
-  <div>
-    <HotkeyProvider disabled>
-      <Hotkey onPress="focus" combination="a">
-        <button>Focus me!</button>
-      </Hotkey>
-      <Hotkey onPress="focus" combination="b">
-        <button>Focus me!</button>
-      </Hotkey>
-    </HotkeyProvider>
-  </div>
+  <HotkeyProvider disabled>
+    <Hotkey onPress="focus" combination="a">
+      <button>Focus me!</button>
+    </Hotkey>
+    <Hotkey onPress="focus" combination="b">
+      <button>Focus me!</button>
+    </Hotkey>
+  </HotkeyProvider>
 );
 
 export const ChangeTooltipCombination = () => (
