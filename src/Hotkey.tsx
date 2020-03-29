@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useRef } from 'react';
 import Tooltip from '@tippyjs/react';
 import HotKeyContext from './HotkeyContext';
 import { bindCombination, unbindCombination } from './events';
+import './mousetrap-global-bind.js';
 
 type Handler = (evt: EventTarget) => void;
 

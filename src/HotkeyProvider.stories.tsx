@@ -4,7 +4,7 @@ import { Button } from '@material-ui/core';
 import { withNotes } from './storybook';
 
 export default {
-  title: 'HotkeyProvider',
+  title: 'Core/HotkeyProvider',
   parameters: {
     info: {
       propTables: [HotkeyProvider],

@@ -4,7 +4,7 @@ import { withNotes } from './storybook';
 import { Button, Switch, Typography } from '@material-ui/core';
 
 export default {
-  title: 'Hotkey',
+  title: 'Core/Hotkey',
   parameters: {
     info: {
       propTables: [Hotkey],

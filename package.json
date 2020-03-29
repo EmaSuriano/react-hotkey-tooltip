@@ -24,7 +24,7 @@
   "dependencies": {
     "@storybook/addon-notes": "^5.3.17",
     "@tippyjs/react": "^4.0.0-alpha.4",
-    "mousetrap": "^1.6.1"
+    "mousetrap": "^1.6.5"
   },
   "peerDependencies": {
     "react": "^16.3.0"

@@ -6,12 +6,12 @@ export const bindCombination = (
   hold?: boolean,
 ) => {
   if (hold) {
-    mousetrap.bind(combination, cb(true), 'keydown');
-    mousetrap.bind(combination, cb(false), 'keyup');
+    mousetrap.bindGlobal(combination, cb(true), 'keydown');
+    mousetrap.bindGlobal(combination, cb(false), 'keyup');
     return;
   }
 
-  mousetrap.bind(combination, cb);
+  mousetrap.bindGlobal(combination, cb);
 };
 
 export const unbindCombination = (combination: string, hold?: boolean) => {
