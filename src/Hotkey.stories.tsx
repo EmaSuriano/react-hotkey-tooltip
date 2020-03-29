@@ -7,8 +7,6 @@ export default {
   title: 'Hotkey',
   parameters: {
     info: {
-      text:
-        'Component responsible for positioning the tooltip in the application and calling the action',
       propTables: [Hotkey],
     },
   },
@@ -33,7 +31,7 @@ export const Default = withNotes(
       </Hotkey>
     </HotkeyProvider>
   ),
-  'Basic example to play with events between two Button. Press shift+h too see the available tooltips.',
+  'Basic example to play with events between two Button. Press `shift+h` too show the Tooltips.',
 );
 
 export const WithNoHotkeyProvider = withNotes(
@@ -55,7 +53,7 @@ export const WithNoHotkeyProvider = withNotes(
       </Hotkey>
     </>
   ),
-  'Example without the HotkeyProvider, not tooltip are visible but hotkeys still work',
+  'Example without the HotkeyProvider, no Tooltips are visible but Hotkeys still work!',
 );
 
 export const Disabled = withNotes(
@@ -76,7 +74,7 @@ export const Disabled = withNotes(
       </Hotkey>
     </HotkeyProvider>
   ),
-  'Disable Hotkey and tooltip for the shortcut `z`. The other combinations should work as expected.',
+  'Disable Hotkey and tooltip for the shortcut `z`. The other combinations should work as expected. Press `shift+h` too show the Tooltips.',
 );
 
 export const SpecialCallback = withNotes(() => {
@@ -91,4 +89,4 @@ export const SpecialCallback = withNotes(() => {
       </Typography>
     </HotkeyProvider>
   );
-}, 'Example with a special handler for `onPress`');
+}, 'Example with a special handler for `onPress`. Press `shift+h` too show the Tooltips.');

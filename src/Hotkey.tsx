@@ -20,7 +20,9 @@ function usePrevious<T>(value: T) {
   });
   return ref.current;
 }
-
+/**
+ * Component responsible for positioning the tooltip in the application and calling the action
+ */
 const Hotkey = ({ disabled, children, combination, onPress }: Props) => {
   const { disabled: groupDisabled, showTooltip, tooltipOptions } = useContext(
     HotKeyContext,

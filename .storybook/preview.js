@@ -28,7 +28,7 @@ addParameters({
 
 const WarningContainer = ({ children }) => (
   <div>
-    <Typography variant="h6">
+    <Typography variant="h6" align="center">
       ⚠️ In order to make use of the shortcuts please focus the content of the
       story ⚠️
     </Typography>
