@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { bindCombination, unbindCombination } from './events';
-import HotkeyContext from './HotkeyContext';
 import { TippyProps } from '@tippyjs/react';
+import { bindHoldCombination, unbindHoldCombination } from '../utils/events';
+import HotkeyContext from './HotkeyContext';
 
 export const KEYBOARD_EVENT = {
   KEY_PRESS: 'keypress',
@@ -9,7 +9,7 @@ export const KEYBOARD_EVENT = {
   KEY_UP: 'keyup',
 };
 
-type HotkeyProviderProps = {
+export type Props = {
   /** Disabled all Hotkeys */
   disabled?: boolean;
   /** Options passed to react-tippy */
@@ -28,7 +28,7 @@ const HotkeyProvider = ({
   tooltipOptions = {},
   tooltipCombination = 'shift+h',
   children,
-}: HotkeyProviderProps) => {
+}: Props) => {
   const [tooltipVisible, setTooltipVisible] = React.useState(false);
   const [currentCombination, setCurrentCombination] = useState(
     tooltipCombination,
@@ -40,7 +40,7 @@ const HotkeyProvider = ({
   };
 
   useEffect(() => {
-    bindCombination(currentCombination, changeTooltipVisibility, true);
+    bindHoldCombination(currentCombination, changeTooltipVisibility);
   }, []);
 
   useEffect(() => {
@@ -48,11 +48,11 @@ const HotkeyProvider = ({
     setCurrentCombination(tooltipCombination);
 
     if (oldCombination !== currentCombination) {
-      unbindCombination(oldCombination, true);
-      bindCombination(currentCombination, changeTooltipVisibility, true);
+      unbindHoldCombination(oldCombination);
+      bindHoldCombination(currentCombination, changeTooltipVisibility);
     }
 
-    return () => unbindCombination(currentCombination, true);
+    return () => unbindHoldCombination(currentCombination);
   }, [tooltipCombination]);
 
   const contextValue = {

@@ -7,18 +7,18 @@
     "strict": true,
     "esModuleInterop": true,
     "moduleResolution": "node",
-    "jsx": "preserve"
+    "jsx": "react"
   },
   "include": ["src/**/*"],
   "exclude": [
     "node_modules",
     "es",
     "lib",
-    "*.spec.ts",
-    "*.spec.tsx",
-    "*.test.ts",
-    "*.test.tsx",
-    "*.stories.ts",
-    "*.stories.tsx"
+    "**/*.spec.ts",
+    "**/*.spec.tsx",
+    "**/*.test.ts",
+    "**/*.test.tsx",
+    "**/*.stories.ts",
+    "**/*.stories.tsx"
   ]
 }

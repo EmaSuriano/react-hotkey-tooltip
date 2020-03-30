@@ -1,2 +1,2 @@
-export { default as HotkeyProvider } from './HotkeyProvider';
-export { default as Hotkey } from './Hotkey';
+export { default as HotkeyProvider } from './HotkeyProvider/HotkeyProvider';
+export { default as Hotkey } from './Hotkey/Hotkey';

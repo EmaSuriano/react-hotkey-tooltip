@@ -1,6 +1,6 @@
 import React, { FormEvent } from 'react';
 import { Hotkey, HotkeyProvider } from '.';
-import { withNotes } from './storybook';
+import { withNotes } from './utils/storybook';
 import {
   Button,
   FormControl,

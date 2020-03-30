@@ -1,16 +1,17 @@
 import React, { useContext, useEffect, useRef } from 'react';
 import Tooltip from '@tippyjs/react';
-import HotKeyContext from './HotkeyContext';
-import { bindCombination, unbindCombination } from './events';
-import './mousetrap-global-bind.js';
+import 'mousetrap-global-bind';
+import HotKeyContext from '../HotkeyProvider/HotkeyContext';
+import { bindCombination, unbindCombination, Handler } from '../utils/events';
 
-type Handler = (evt: EventTarget) => void;
-
-type Props = {
+export type Props = {
+  /** Disabled all Hotkey and Tooltip */
   disabled?: boolean;
+  /** Your React component to wrap */
   children: React.ReactElement;
+  /** Key combination to trigger the tooltips */
   combination: string;
-  // @default: 3
+  /** Action to trigger when the hotkey is pressed */
   onPress: string | Handler;
 };
 
@@ -33,19 +34,19 @@ const Hotkey = ({ disabled, children, combination, onPress }: Props) => {
   const elementRef = useRef<Element>();
   const previousCombination = usePrevious(combination);
 
-  const onPressHotkey = (evt: EventTarget) => {
-    if (disabled || groupDisabled) return false;
+  const onPressHotkey = (evt: Event) => {
+    if (disabled || groupDisabled) return;
 
     if (typeof onPress === 'function') return onPress(evt);
 
     if (elementRef && elementRef.current) {
-      if (typeof elementRef.current[onPress] !== 'function') {
+      if (typeof (elementRef.current as any)[onPress] !== 'function') {
         throw new Error(
           `ERROR: The method of ${onPress} is not present in the DOMNode of the child, please check render.`,
         );
       }
 
-      (elementRef.current[onPress] as Function)(evt);
+      ((elementRef.current as any)[onPress] as Function)(evt);
     }
   };
 
