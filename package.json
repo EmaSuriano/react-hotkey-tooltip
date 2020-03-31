@@ -25,9 +25,9 @@
   },
   "devDependencies": {
     "@material-ui/core": "^4.9.8",
-    "@storybook/addon-info": "^5.3.17",
-    "@storybook/addon-notes": "^5.3.17",
-    "@storybook/react": "^5.3.17",
+    "@storybook/addon-info": "^5.3.18",
+    "@storybook/addon-notes": "^5.3.18",
+    "@storybook/react": "^5.3.18",
     "@types/mousetrap": "^1.6.3",
     "@types/node": "^13.9.5",
     "@types/react": "^16.9.25",
