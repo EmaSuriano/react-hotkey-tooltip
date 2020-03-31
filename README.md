@@ -2,12 +2,10 @@
 
 [![Travis badge](https://api.travis-ci.org/EmaSuriano/react-hotkey-tooltip.svg)](https://travis-ci.org/EmaSuriano/react-hotkey-tooltip)
 [![npm version](https://badge.fury.io/js/react-hotkey-tooltip.svg)](https://badge.fury.io/js/react-hotkey-tooltip)
-[![Coverage Status](https://coveralls.io/repos/github/EmaSuriano/react-hotkey-tooltip/badge.svg?branch=master)](https://coveralls.io/github/EmaSuriano/react-hotkey-tooltip?branch=master)
-[![eslint](https://img.shields.io/badge/eslint-enabled-green.svg)](https://eslint.org/)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
 <div align="center">
-  <a href="https://react-hotkey-tooltip.netlify.com/#/">
+  <a href="https://emasuriano.github.io/react-hotkey-tooltip/">
     <img alt="react-hotkey-tooltip logo" src="./doc/logo.png" height="150px" />
   </a>
 </div>
@@ -16,7 +14,7 @@
   <strong>A global Hotkey provider with built in tooltip for React</strong>
 </div>
 
-## [Docs](https://react-hotkey-tooltip.netlify.com/)
+## [Docs](https://emasuriano.github.io/react-hotkey-tooltip)
 
 ## Why you should use it?
 
@@ -32,16 +30,16 @@ This library will help you by declaring global hotkeys that automatically will b
 
 Why mess up with document.addEventListener or positioning/styling tooltips if there are a lot of open source libraries that can do that for me. These are the chosen ones!
 
-- [mousetrap](https://github.com/ccampbell/mousetrap): to bind and unbind hotkeys globally 🌐
-- [react-tippy](https://github.com/tvkhoa/react-tippy): to display beautiful tooltips 😄
+- [mousetrap](https://github.com/ccampbell/mousetrap): to bind and unbind Hotkeys globally 🌐
+- [@tippyjs/react](https://github.com/atomiks/tippyjs-react): to display beautiful Tooltips 😄
 
 ## Installation
 
-The library is available as a package in npm and yarn, so use the one you prefer.
+You can the package manager you want:
 
 ```bash
 # npm
-$ npm install react-hotkey-toolip
+$ npm install react-hotkey-tooltip
 
 # yarn
 $ yarn add react-hotkey-tooltip
@@ -63,6 +61,8 @@ const ClickableButtonByPressingA = () => (
   </HotkeyProvider>
 );
 ```
+
+For more examples please consider checking the [Docs](https://emasuriano.github.io/react-hotkey-tooltip) section.
 
 ## License
 
