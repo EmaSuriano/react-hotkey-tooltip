@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "build": "rm -rf es lib && tsc && tsc -p tsconfig.es.json",
-    "test": "echo 'to complete ...",
+    "test": "echo 'to complete ...'",
     "lint": "eslint ./src --ext tsx,ts",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
