@@ -13,8 +13,7 @@
     "test": "echo 'to complete ...'",
     "lint": "eslint ./src --ext tsx,ts",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
-    "semantic-release": "semantic-release"
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@tippyjs/react": "^4.0.0-alpha.4",
@@ -45,7 +44,6 @@
     "react": "^16.13.1",
     "react-docgen-typescript-loader": "^3.7.1",
     "react-dom": "^16.7.0",
-    "semantic-release": "^17.0.4",
     "typeface-roboto": "^0.0.75",
     "typescript": "^3.8.3"
   },

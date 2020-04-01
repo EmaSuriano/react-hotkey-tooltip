@@ -3,12 +3,6 @@ language: node_js
 node_js:
   - '10'
 
-addons:
-  apt:
-    packages:
-      # cypress dep
-      - libgconf-2-4
-
 cache:
   directories:
     - ~/.npm
@@ -24,14 +18,7 @@ script:
   - yarn build-storybook
 
 deploy:
-  # deploy to npm
-  - provider: script
-    skip_cleanup: true
-    script:
-      - NPM_TOKEN=$NPM_TOKEN GH_TOKEN=$GH_TOKEN yarn semantic-release
-    on:
-      branch: master
-  # deploy to github pages
+  # Deploy to github pages on deploy to master
   - provider: pages
     skip_cleanup: true
     github_token: $GH_TOKEN
@@ -39,3 +26,14 @@ deploy:
     local_dir: storybook-static
     on:
       branch: master
+
+jobs:
+  include:
+    # Define the release stage that runs semantic-release
+    - stage: release
+      node_js: lts/*
+      deploy:
+        provider: script
+        skip_cleanup: true
+        script:
+          - npx semantic-release
