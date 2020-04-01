@@ -45,7 +45,6 @@
     "react": "^16.13.1",
     "react-docgen-typescript-loader": "^3.7.1",
     "react-dom": "^16.7.0",
-    "semantic-release": "^17.0.4",
     "typeface-roboto": "^0.0.75",
     "typescript": "^3.8.3"
   },
