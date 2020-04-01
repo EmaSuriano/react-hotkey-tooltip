@@ -50,7 +50,7 @@
     "typescript": "^3.8.3"
   },
   "author": "Ema Suriano",
-  "homepage": "https://react-hotkey-tooltip.netlify.com/",
+  "homepage": "https://emasuriano.github.io/react-hotkey-tooltip",
   "license": "MIT",
   "repository": "https://github.com/EmaSuriano/react-hotkey-tooltip",
   "keywords": [
