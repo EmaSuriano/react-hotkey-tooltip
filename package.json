@@ -13,8 +13,7 @@
     "test": "echo 'to complete ...'",
     "lint": "eslint ./src --ext tsx,ts",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
-    "semantic-release": "semantic-release"
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@tippyjs/react": "^4.0.0-alpha.4",
