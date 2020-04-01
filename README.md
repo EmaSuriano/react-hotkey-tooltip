@@ -7,7 +7,7 @@
 
 <div align="center">
   <a href="https://emasuriano.github.io/react-hotkey-tooltip/">
-    <img alt="react-hotkey-tooltip logo" src="./doc/logo.png" height="150px" />
+    <img alt="react-hotkey-tooltip logo" src="./docs/logo.png" height="150px" />
   </a>
 </div>
 
@@ -19,17 +19,17 @@
 
 ## Why you should use it?
 
-When working with hotkeys in a React application we will find many problems when trying to implement it:
+When working with Hotkeys in a React application we will find many problems when trying to implement it:
 
 - Hotkeys are only accessible inside a specific component (not globally).
-- Must take care of the hotkeys manually throughout the life cycle.
-- Have to provide a way so the user can see all the hotkeys on the screen.
+- Must take care of the Hotkeys manually throughout the life cycle.
+- Have to provide a way so the user can see all the Hotkeys on the screen.
 
-This library will help you by declaring global hotkeys that automatically will be updated by any life cycle of the component and show a tooltip by pressing a combination of keys ✨
+This library will help you by declaring global Hotkeys that automatically will be updated by any life cycle of the component and show a tooltip by pressing a combination of keys ✨
 
 ## Built with
 
-Why mess up with document.addEventListener or positioning/styling tooltips if there are a lot of open source libraries that can do that for me. These are the chosen ones!
+Why mess up with document.addEventListener or positioning/styling Tooltips if there are a lot of open source libraries that can do that for me. These are the chosen ones!
 
 - [mousetrap](https://github.com/ccampbell/mousetrap): to bind and unbind Hotkeys globally 🌐
 - [@tippyjs/react](https://github.com/atomiks/tippyjs-react): to display beautiful Tooltips 😄
@@ -67,4 +67,4 @@ For more examples please consider checking the [Docs](https://emasuriano.github.
 
 ## License
 
-MIT. Also check react-tippy.js' and mousetrap' license.
+MIT. Also check `react-tippy.js`' and `mousetrap`' license.
