@@ -27,7 +27,7 @@ deploy:
   - provider: script
     skip_cleanup: true
     script:
-      - GH_TOKEN=$GH_TOKEN yarn semantic-release
+      - NPM_TOKEN=$NPM_TOKEN GH_TOKEN=$GH_TOKEN yarn semantic-release
     on:
       branch: master
   # deploy to github pages
