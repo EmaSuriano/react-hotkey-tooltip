@@ -1792,11 +1792,10 @@
     loader-utils "^1.2.3"
 
 "@tippyjs/react@^4.0.0-alpha.4":
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/@tippyjs/react/-/react-4.0.2.tgz#fadd14f1e36dd4f63f5f241cc78f3a1bb8394250"
-  integrity sha512-iAKTjUmrXqTTJ4HZRDgmvVfUiv9pTzJoDjPLDbmvB6vttkuYvZ/o8NhHa72vMFgHpiMFNoYWtB8OCRR6x5Zs8w==
+  version "4.0.4"
+  resolved "https://registry.yarnpkg.com/@tippyjs/react/-/react-4.0.4.tgz#7ba87ff8ad27eb4d5fae6daa4217f7d4de72088d"
+  integrity sha512-XifxYQU9Wx52gWRkF5WNDAurKh+s0O6B+j3nLLSCnhz8HigQlHuvsr+5ISiqFpeoA5/NAgFxLi6FPLNq8DfD8g==
   dependencies:
-    prop-types "^15.6.2"
     tippy.js "^6.2.0"
 
 "@types/anymatch@*":
