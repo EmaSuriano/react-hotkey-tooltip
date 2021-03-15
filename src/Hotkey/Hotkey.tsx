@@ -22,6 +22,7 @@ function usePrevious<T>(value: T) {
   });
   return ref.current;
 }
+
 /**
  * Component responsible for positioning the tooltip in the application and calling the action
  */
@@ -30,8 +31,7 @@ const Hotkey = ({ disabled, children, combination, onPress }: Props) => {
     HotKeyContext,
   );
 
-  // const [currentCombination, setCurrentCombination] = useState(combination);
-  const elementRef = useRef<Element>();
+  const elementRef = useRef<HTMLElement>();
   const previousCombination = usePrevious(combination);
 
   const onPressHotkey = (evt: Event) => {
@@ -40,13 +40,16 @@ const Hotkey = ({ disabled, children, combination, onPress }: Props) => {
     if (typeof onPress === 'function') return onPress(evt);
 
     if (elementRef && elementRef.current) {
-      if (typeof (elementRef.current as any)[onPress] !== 'function') {
+      const onPressCb =
+        elementRef.current[onPress as keyof GlobalEventHandlers];
+
+      if (typeof onPressCb !== 'function') {
         throw new Error(
           `ERROR: The method of ${onPress} is not present in the DOMNode of the child, please check render.`,
         );
       }
 
-      ((elementRef.current as any)[onPress] as Function)(evt);
+      (onPressCb as (evt: Event) => void)(evt);
     }
   };
 
