@@ -44,8 +44,9 @@ const Hotkey = ({ disabled, children, combination, onPress }: Props) => {
         typeof elementRef.current[onPress as keyof GlobalEventHandlers] ===
         'function'
       ) {
-        // @ts-ignore
-        return elementRef.current[onPress](evt);
+        return (elementRef.current[onPress as keyof GlobalEventHandlers] as (
+          e: Event,
+        ) => void)(evt);
       }
 
       throw new Error(

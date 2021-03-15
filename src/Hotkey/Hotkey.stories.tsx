@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Switch, Typography } from '@material-ui/core';
-import { Hotkey, HotkeyProvider } from '..';
+import { Hotkey } from '..';
 import { withNotes } from '../utils/storybook';
 
 export default {
