@@ -1,13 +1,13 @@
 # React Hotkey Tooltip
 
-[![Build Status](https://travis-ci.com/EmaSuriano/react-hotkey-tooltip.svg?branch=master)](https://travis-ci.com/EmaSuriano/react-hotkey-tooltip)
+[![Build](https://github.com/EmaSuriano/react-hotkey-tooltip/actions/workflows/build.yml/badge.svg)](https://github.com/EmaSuriano/react-hotkey-tooltip/actions/workflows/build.yml)
 [![npm version](https://badge.fury.io/js/react-hotkey-tooltip.svg)](https://badge.fury.io/js/react-hotkey-tooltip)
 [![prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
 <div align="center">
   <a href="https://emasuriano.github.io/react-hotkey-tooltip/">
-    <img alt="react-hotkey-tooltip logo" src="./docs/logo.png" height="150px" />
+    <img alt="react-hotkey-tooltip logo" src="https://raw.githubusercontent.com/EmaSuriano/react-hotkey-tooltip/master/docs/logo.png" height="150px" />
   </a>
 </div>
 
@@ -15,7 +15,7 @@
   <strong>A global Hotkey provider with built in tooltip for React</strong>
 </div>
 
-## [Docs](https://emasuriano.github.io/react-hotkey-tooltip)
+## [Docs 📚](https://emasuriano.github.io/react-hotkey-tooltip)
 
 ## Why you should use it?
 
