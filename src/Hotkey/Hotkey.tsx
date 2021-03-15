@@ -40,16 +40,18 @@ const Hotkey = ({ disabled, children, combination, onPress }: Props) => {
     if (typeof onPress === 'function') return onPress(evt);
 
     if (elementRef && elementRef.current) {
-      const onPressCb =
-        elementRef.current[onPress as keyof GlobalEventHandlers];
-
-      if (typeof onPressCb !== 'function') {
-        throw new Error(
-          `ERROR: The method of ${onPress} is not present in the DOMNode of the child, please check render.`,
-        );
+      if (
+        typeof elementRef.current[onPress as keyof GlobalEventHandlers] ===
+        'function'
+      ) {
+        return (elementRef.current[onPress as keyof GlobalEventHandlers] as (
+          e: Event,
+        ) => void)(evt);
       }
 
-      (onPressCb as (evt: Event) => void)(evt);
+      throw new Error(
+        `ERROR: The method of ${onPress} is not present in the DOMNode of the child, please check render.`,
+      );
     }
   };
 
