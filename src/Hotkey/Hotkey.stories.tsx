@@ -12,29 +12,7 @@ export default {
   },
 };
 
-export const Default = withNotes(
-  () => (
-    <HotkeyProvider>
-      <Hotkey onPress="focus" combination="z">
-        <Button
-          variant="contained"
-          color="primary"
-          style={{ marginRight: '10px' }}
-        >
-          Press Z to focus me!
-        </Button>
-      </Hotkey>
-      <Hotkey onPress="focus" combination="x">
-        <Button variant="contained" color="primary">
-          Press X to focus me!
-        </Button>
-      </Hotkey>
-    </HotkeyProvider>
-  ),
-  'Basic example to play with events between two Button. Press `shift+h` too show the Tooltips.',
-);
-
-export const WithNoHotkeyProvider = withNotes(
+export const NoHotkeyProvider = withNotes(
   () => (
     <>
       <Hotkey onPress="focus" combination="z">
@@ -42,6 +20,7 @@ export const WithNoHotkeyProvider = withNotes(
           variant="contained"
           color="primary"
           style={{ marginRight: '10px' }}
+          autoFocus
         >
           Press Z to focus me!
         </Button>
@@ -58,9 +37,9 @@ export const WithNoHotkeyProvider = withNotes(
 
 export const Disabled = withNotes(
   () => (
-    <HotkeyProvider>
+    <>
       <Hotkey onPress="focus" combination="z" disabled>
-        <Button variant="contained" color="primary">
+        <Button variant="contained" autoFocus color="primary">
           Press Z to focus me!
         </Button>
       </Hotkey>
@@ -72,7 +51,7 @@ export const Disabled = withNotes(
           Press X to focus me!
         </Button>
       </Hotkey>
-    </HotkeyProvider>
+    </>
   ),
   'Disable Hotkey and tooltip for the shortcut `z`. The other combinations should work as expected. Press `shift+h` too show the Tooltips.',
 );
@@ -80,13 +59,8 @@ export const Disabled = withNotes(
 export const SpecialCallback = withNotes(() => {
   const [checked, setChecked] = React.useState(false);
   return (
-    <HotkeyProvider>
-      <Hotkey onPress={() => setChecked((tgl) => !tgl)} combination="z">
-        <Switch checked={checked} />
-      </Hotkey>
-      <Typography variant="subtitle1">
-        Change the Switch state by pressing Z
-      </Typography>
-    </HotkeyProvider>
+    <Hotkey onPress={() => setChecked((tgl) => !tgl)} combination="z">
+      <Switch checked={checked} autoFocus />
+    </Hotkey>
   );
-}, 'Example with a special handler for `onPress`. Press `shift+h` too show the Tooltips.');
+}, 'Example with a special handler for `onPress` - Change the Switch state by pressing Z. Press `shift+h` too show the Tooltips.');

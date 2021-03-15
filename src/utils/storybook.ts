@@ -1,7 +1,10 @@
-export const withNotes = (fn: any, notes: string) => {
+export const withNotes = (fn: any, text: string) => {
   fn.story = {
     parameters: {
-      notes,
+      info: {
+        inline: true,
+        text,
+      },
     },
   };
 

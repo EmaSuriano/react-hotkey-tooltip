@@ -21,7 +21,7 @@ export default {
 };
 
 export const ControlledRadioButton = withNotes(() => {
-  const [selectedRadio, setSelectedRadio] = React.useState('1');
+  const [selectedRadio, setSelectedRadio] = React.useState('Female');
 
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -48,13 +48,21 @@ export const ControlledRadioButton = withNotes(() => {
             onChange={onChangeRadio}
           >
             <Hotkey combination="1" onPress="click">
-              <FormControlLabel value="1" control={<Radio />} label="Female" />
+              <FormControlLabel
+                value="Female"
+                control={<Radio autoFocus />}
+                label="Female"
+              />
             </Hotkey>
             <Hotkey combination="2" onPress="click">
-              <FormControlLabel value="2" control={<Radio />} label="Male" />
+              <FormControlLabel value="Male" control={<Radio />} label="Male" />
             </Hotkey>
             <Hotkey combination="3" onPress="click">
-              <FormControlLabel value="3" control={<Radio />} label="Other" />
+              <FormControlLabel
+                value="Other"
+                control={<Radio />}
+                label="Other"
+              />
             </Hotkey>
           </RadioGroup>
           <Hotkey combination="space" onPress="click">

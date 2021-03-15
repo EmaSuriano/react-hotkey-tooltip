@@ -12,41 +12,6 @@ export default {
   },
 };
 
-export const Default = withNotes(
-  () => (
-    <HotkeyProvider>
-      <Hotkey onPress="focus" combination="z">
-        <Button
-          variant="contained"
-          color="default"
-          style={{ marginRight: '10px' }}
-        >
-          Press Z to focus me!
-        </Button>
-      </Hotkey>
-      <Hotkey onPress="focus" combination="x">
-        <Button
-          variant="contained"
-          color="primary"
-          style={{ marginRight: '10px' }}
-        >
-          Press X to focus me!
-        </Button>
-      </Hotkey>
-      <Hotkey onPress="focus" combination="c">
-        <Button
-          variant="contained"
-          color="secondary"
-          style={{ marginRight: '10px' }}
-        >
-          Press C to focus me!
-        </Button>
-      </Hotkey>
-    </HotkeyProvider>
-  ),
-  'Basic example with 3 different Hotkeys. Press `shift+h` to show the Tooltips.',
-);
-
 export const AllHotkeysDisabled = withNotes(
   () => (
     <HotkeyProvider disabled>
@@ -55,6 +20,7 @@ export const AllHotkeysDisabled = withNotes(
           variant="contained"
           color="primary"
           style={{ marginRight: '10px' }}
+          autoFocus
         >
           Press Z to focus me!
         </Button>
@@ -81,6 +47,7 @@ export const ChangeTooltipCombination = withNotes(
           variant="contained"
           color="primary"
           style={{ marginRight: '10px' }}
+          autoFocus
         >
           Press Z to focus me!
         </Button>
@@ -112,6 +79,7 @@ export const ThemingTooltip = withNotes(
           variant="contained"
           color="primary"
           style={{ marginRight: '10px' }}
+          autoFocus
         >
           Press Z to focus me!
         </Button>
