@@ -16,8 +16,7 @@
     "lint": "eslint ./src --ext tsx,ts",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "release": "npx semantic-release",
-    "deploy": "npm run build-storybook && npx gh-pages -d storybook-static -b gh-pages"
+    "release": "npx semantic-release"
   },
   "dependencies": {
     "@tippyjs/react": "^4.0.0-alpha.4",
