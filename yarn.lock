@@ -2550,9 +2550,9 @@
   integrity sha512-tHq6qdbT9U1IRSGf14CL0pUlULksvY9OZ+5eEgl1N7t+OA3tGvNpxJCzuKQlsNgCVwbAs670L1vcVQi8j9HjnA==
 
 "@types/mousetrap@^1.6.3":
-  version "1.6.6"
-  resolved "https://registry.yarnpkg.com/@types/mousetrap/-/mousetrap-1.6.6.tgz#0db6e60da9715fd6787a91261271d646202db4df"
-  integrity sha512-4lrOc+oVh2NVt4FtwxtdJZ8L9wxVU/AR4qPvZ7yWvzN/I5FoemxhYZjeDbD+E4lxFbZ2+wzQancfbPxID1WJlw==
+  version "1.6.7"
+  resolved "https://registry.yarnpkg.com/@types/mousetrap/-/mousetrap-1.6.7.tgz#362411f89ef78a9ece3a5ff71361e85e3ce6febf"
+  integrity sha512-VGAfynzXjVzqx2TzLTrdXURhgn+N/66IgEFFt4LYCJ0JIzRGcFUCX9sTAqgJGnyHKYt/vvlo+B9sJHhpEWaP5w==
 
 "@types/node-fetch@^2.5.7":
   version "2.5.9"
