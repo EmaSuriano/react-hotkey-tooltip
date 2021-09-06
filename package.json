@@ -37,7 +37,7 @@
     "@storybook/addon-info": "^5.3.18",
     "@storybook/react": "^6.1.21",
     "@testing-library/jest-dom": "^5.11.9",
-    "@testing-library/react": "^11.2.5",
+    "@testing-library/react": "^12.0.0",
     "@types/jest": "^27.0.1",
     "@types/mousetrap": "^1.6.3",
     "@types/node": "^16.7.10",
