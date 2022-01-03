@@ -112,18 +112,6 @@
     browserslist "^4.17.5"
     semver "^6.3.0"
 
-"@babel/helper-create-class-features-plugin@^7.16.0":
-  version "7.16.0"
-  resolved "https://registry.yarnpkg.com/@babel/helper-create-class-features-plugin/-/helper-create-class-features-plugin-7.16.0.tgz#090d4d166b342a03a9fec37ef4fd5aeb9c7c6a4b"
-  integrity sha512-XLwWvqEaq19zFlF5PTgOod4bUA+XbkR4WLQBct1bkzmxJGB0ZEJaoKF4c8cgH9oBtCDuYJ8BP5NB9uFiEgO5QA==
-  dependencies:
-    "@babel/helper-annotate-as-pure" "^7.16.0"
-    "@babel/helper-function-name" "^7.16.0"
-    "@babel/helper-member-expression-to-functions" "^7.16.0"
-    "@babel/helper-optimise-call-expression" "^7.16.0"
-    "@babel/helper-replace-supers" "^7.16.0"
-    "@babel/helper-split-export-declaration" "^7.16.0"
-
 "@babel/helper-create-class-features-plugin@^7.16.5":
   version "7.16.5"
   resolved "https://registry.yarnpkg.com/@babel/helper-create-class-features-plugin/-/helper-create-class-features-plugin-7.16.5.tgz#5d1bcd096792c1ebec6249eebc6358eec55d0cad"
@@ -246,13 +234,6 @@
   dependencies:
     "@babel/types" "^7.16.7"
 
-"@babel/helper-member-expression-to-functions@^7.16.0":
-  version "7.16.0"
-  resolved "https://registry.yarnpkg.com/@babel/helper-member-expression-to-functions/-/helper-member-expression-to-functions-7.16.0.tgz#29287040efd197c77636ef75188e81da8bccd5a4"
-  integrity sha512-bsjlBFPuWT6IWhl28EdrQ+gTvSvj5tqVP5Xeftp07SEuz5pLnsXZuDkDD3Rfcxy0IsHmbZ+7B2/9SHzxO0T+sQ==
-  dependencies:
-    "@babel/types" "^7.16.0"
-
 "@babel/helper-member-expression-to-functions@^7.16.5":
   version "7.16.5"
   resolved "https://registry.yarnpkg.com/@babel/helper-member-expression-to-functions/-/helper-member-expression-to-functions-7.16.5.tgz#1bc9f7e87354e86f8879c67b316cb03d3dc2caab"
@@ -327,16 +308,6 @@
     "@babel/helper-annotate-as-pure" "^7.16.7"
     "@babel/helper-wrap-function" "^7.16.7"
     "@babel/types" "^7.16.7"
-
-"@babel/helper-replace-supers@^7.16.0":
-  version "7.16.0"
-  resolved "https://registry.yarnpkg.com/@babel/helper-replace-supers/-/helper-replace-supers-7.16.0.tgz#73055e8d3cf9bcba8ddb55cad93fedc860f68f17"
-  integrity sha512-TQxuQfSCdoha7cpRNJvfaYxxxzmbxXw/+6cS7V02eeDYyhxderSoMVALvwupA54/pZcOTtVeJ0xccp1nGWladA==
-  dependencies:
-    "@babel/helper-member-expression-to-functions" "^7.16.0"
-    "@babel/helper-optimise-call-expression" "^7.16.0"
-    "@babel/traverse" "^7.16.0"
-    "@babel/types" "^7.16.0"
 
 "@babel/helper-replace-supers@^7.16.5":
   version "7.16.5"
@@ -762,12 +733,12 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.14.5"
 
-"@babel/plugin-syntax-typescript@^7.16.0":
-  version "7.16.0"
-  resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-typescript/-/plugin-syntax-typescript-7.16.0.tgz#2feeb13d9334cc582ea9111d3506f773174179bb"
-  integrity sha512-Xv6mEXqVdaqCBfJFyeab0fH2DnUoMsDmhamxsSi4j8nLd4Vtw213WMJr55xxqipC/YVWyPY3K0blJncPYji+dQ==
+"@babel/plugin-syntax-typescript@^7.16.7":
+  version "7.16.7"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-typescript/-/plugin-syntax-typescript-7.16.7.tgz#39c9b55ee153151990fb038651d58d3fd03f98f8"
+  integrity sha512-YhUIJHHGkqPgEcMYkPCKTyGUdoGKWtopIycQyjJH8OjvRgOYsXsaKehLVPScKJWAULPxMa4N1vCe6szREFlZ7A==
   dependencies:
-    "@babel/helper-plugin-utils" "^7.14.5"
+    "@babel/helper-plugin-utils" "^7.16.7"
 
 "@babel/plugin-transform-arrow-functions@^7.12.1", "@babel/plugin-transform-arrow-functions@^7.16.7":
   version "7.16.7"
@@ -1057,14 +1028,14 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.16.7"
 
-"@babel/plugin-transform-typescript@^7.16.1":
-  version "7.16.1"
-  resolved "https://registry.yarnpkg.com/@babel/plugin-transform-typescript/-/plugin-transform-typescript-7.16.1.tgz#cc0670b2822b0338355bc1b3d2246a42b8166409"
-  integrity sha512-NO4XoryBng06jjw/qWEU2LhcLJr1tWkhpMam/H4eas/CDKMX/b2/Ylb6EI256Y7+FVPCawwSM1rrJNOpDiz+Lg==
+"@babel/plugin-transform-typescript@^7.16.7":
+  version "7.16.7"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-transform-typescript/-/plugin-transform-typescript-7.16.7.tgz#33f8c2c890fbfdc4ef82446e9abb8de8211a3ff3"
+  integrity sha512-Hzx1lvBtOCWuCEwMmYOfpQpO7joFeXLgoPuzZZBtTxXqSqUGUubvFGZv2ygo1tB5Bp9q6PXV3H0E/kf7KM0RLA==
   dependencies:
-    "@babel/helper-create-class-features-plugin" "^7.16.0"
-    "@babel/helper-plugin-utils" "^7.14.5"
-    "@babel/plugin-syntax-typescript" "^7.16.0"
+    "@babel/helper-create-class-features-plugin" "^7.16.7"
+    "@babel/helper-plugin-utils" "^7.16.7"
+    "@babel/plugin-syntax-typescript" "^7.16.7"
 
 "@babel/plugin-transform-unicode-escapes@^7.16.7":
   version "7.16.7"
@@ -1193,13 +1164,13 @@
     "@babel/plugin-transform-react-pure-annotations" "^7.16.7"
 
 "@babel/preset-typescript@^7.12.7", "@babel/preset-typescript@^7.13.0", "@babel/preset-typescript@^7.16.0":
-  version "7.16.5"
-  resolved "https://registry.yarnpkg.com/@babel/preset-typescript/-/preset-typescript-7.16.5.tgz#b86a5b0ae739ba741347d2f58c52f52e63cf1ba1"
-  integrity sha512-lmAWRoJ9iOSvs3DqOndQpj8XqXkzaiQs50VG/zESiI9D3eoZhGriU675xNCr0UwvsuXrhMAGvyk1w+EVWF3u8Q==
+  version "7.16.7"
+  resolved "https://registry.yarnpkg.com/@babel/preset-typescript/-/preset-typescript-7.16.7.tgz#ab114d68bb2020afc069cd51b37ff98a046a70b9"
+  integrity sha512-WbVEmgXdIyvzB77AQjGBEyYPZx+8tTsO50XtfozQrkW8QB2rLJpH2lgx0TRw5EJrBxOZQ+wCcyPVQvS8tjEHpQ==
   dependencies:
-    "@babel/helper-plugin-utils" "^7.16.5"
-    "@babel/helper-validator-option" "^7.14.5"
-    "@babel/plugin-transform-typescript" "^7.16.1"
+    "@babel/helper-plugin-utils" "^7.16.7"
+    "@babel/helper-validator-option" "^7.16.7"
+    "@babel/plugin-transform-typescript" "^7.16.7"
 
 "@babel/register@^7.12.1":
   version "7.13.8"
@@ -1241,7 +1212,7 @@
     "@babel/parser" "^7.16.7"
     "@babel/types" "^7.16.7"
 
-"@babel/traverse@^7.1.0", "@babel/traverse@^7.12.11", "@babel/traverse@^7.12.9", "@babel/traverse@^7.13.0", "@babel/traverse@^7.16.0", "@babel/traverse@^7.16.5", "@babel/traverse@^7.16.7":
+"@babel/traverse@^7.1.0", "@babel/traverse@^7.12.11", "@babel/traverse@^7.12.9", "@babel/traverse@^7.13.0", "@babel/traverse@^7.16.5", "@babel/traverse@^7.16.7":
   version "7.16.7"
   resolved "https://registry.yarnpkg.com/@babel/traverse/-/traverse-7.16.7.tgz#dac01236a72c2560073658dd1a285fe4e0865d76"
   integrity sha512-8KWJPIb8c2VvY8AJrydh6+fVRo2ODx1wYBU2398xJVq0JomuLBZmVQzLPBblJgHIGYG4znCpUZUZ0Pt2vdmVYQ==
