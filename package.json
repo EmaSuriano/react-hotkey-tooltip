@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@tippyjs/react": "^4.0.0-alpha.4",
-    "jest": "^26.6.3",
+    "jest": "^28.1.2",
     "mousetrap": "^1.6.5",
     "mousetrap-global-bind": "^1.1.0"
   },
@@ -38,7 +38,7 @@
     "@storybook/react": "^6.1.21",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^12.1.0",
-    "@types/jest": "^27.0.1",
+    "@types/jest": "^28.1.4",
     "@types/mousetrap": "^1.6.3",
     "@types/node": "^17.0.9",
     "@types/react": "^17.0.3",
