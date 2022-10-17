@@ -1,0 +1,61 @@
+import { Meta } from '@storybook/addon-docs';
+import { HotkeyProvider } from '../HotkeyProvider';
+import { Button } from '@material-ui/core';
+import { Hotkey } from '../Hotkey';
+
+<Meta title="Introduction" />
+
+# React Hotkey Tooltip
+
+> A global Hotkey provider with built in tooltip for React
+
+## Why you should use it?
+
+When working with Hotkeys in a React application we will find many problems when trying to implement it:
+
+- Hotkeys are only accessible inside a specific component (not globally).
+- Must take care of the Hotkeys manually throughout the life cycle.
+- Have to provide a way so the user can see all the Hotkeys on the screen.
+
+This library will help you by declaring global Hotkeys that automatically will be updated by any life cycle of the component and show a tooltip by pressing a combination of keys ✨
+
+## Built with
+
+Why mess up with document.addEventListener or positioning/styling Tooltips if there are a lot of open source libraries that can do that for me. These are the chosen ones!
+
+- [mousetrap](https://github.com/ccampbell/mousetrap): to bind and unbind Hotkeys globally 🌐
+- [@tippyjs/react](https://github.com/atomiks/tippyjs-react): to display beautiful Tooltips 😄
+
+## Simple Demo
+
+Press `shift+h` to see the tooltip.
+
+<HotkeyProvider>
+  <Hotkey onPress="focus" combination="z">
+    <Button variant="contained" color="primary">
+      Press Z to focus me!
+    </Button>
+  </Hotkey>
+</HotkeyProvider>
+
+```jsx
+<HotkeyProvider>
+  <Hotkey onPress="focus" combination="z">
+    <Button variant="contained" color="primary">
+      Press Z to focus me!
+    </Button>
+  </Hotkey>
+</HotkeyProvider>
+```
+
+## Installation
+
+You can the package manager you want:
+
+```bash
+# npm
+$ npm install react-hotkey-tooltip
+
+# yarn
+$ yarn add react-hotkey-tooltip
+```

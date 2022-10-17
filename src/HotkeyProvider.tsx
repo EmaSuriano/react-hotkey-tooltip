@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { TippyProps } from '@tippyjs/react';
-import { bindHoldCombination, unbindHoldCombination } from '../utils/events';
-import HotkeyContext from './HotkeyContext';
+import { bindHoldCombination, unbindHoldCombination } from './utils';
+import { HotkeyContext } from './HotkeyContext';
 
 export const KEYBOARD_EVENT = {
   KEY_PRESS: 'keypress',
@@ -9,7 +9,7 @@ export const KEYBOARD_EVENT = {
   KEY_UP: 'keyup',
 };
 
-export type Props = {
+type Props = {
   /** Disabled all Hotkeys */
   disabled?: boolean;
   /** Options passed to react-tippy */
@@ -23,16 +23,15 @@ export type Props = {
 /**
  * The Top wrapper component that handles when to show the Tooltips and globally disabled them.
  * */
-const HotkeyProvider = ({
+export const HotkeyProvider = ({
   disabled = false,
   tooltipOptions = {},
   tooltipCombination = 'shift+h',
   children,
 }: Props) => {
   const [tooltipVisible, setTooltipVisible] = React.useState(false);
-  const [currentCombination, setCurrentCombination] = useState(
-    tooltipCombination,
-  );
+  const [currentCombination, setCurrentCombination] =
+    useState(tooltipCombination);
 
   const changeTooltipVisibility = (on: boolean) => () => {
     if (disabled) setTooltipVisible(false);
@@ -67,5 +66,3 @@ const HotkeyProvider = ({
     </HotkeyContext.Provider>
   );
 };
-
-export default HotkeyProvider;
