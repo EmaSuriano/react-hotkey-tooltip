@@ -9,6 +9,7 @@
     "build-storybook": "build-storybook",
     "test": "jest",
     "lint": "eslint ./src --ext tsx,ts",
+    "prerelease": "yarn build",
     "release": "npx semantic-release"
   },
   "dependencies": {
@@ -48,7 +49,7 @@
     "vite-plugin-dts": "^1.6.6"
   },
   "author": "Ema Suriano",
-  "homepage": "https://emasuriano.github.io/react-hotkey-tooltip",
+  "homepage": "https://react-hotkey-tooltip-storybook.netlify.app",
   "license": "MIT",
   "repository": "https://github.com/EmaSuriano/react-hotkey-tooltip",
   "keywords": [

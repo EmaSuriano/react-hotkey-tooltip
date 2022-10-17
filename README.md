@@ -3,9 +3,10 @@
 [![Master](https://github.com/EmaSuriano/react-hotkey-tooltip/actions/workflows/master.yml/badge.svg)](https://github.com/EmaSuriano/react-hotkey-tooltip/actions/workflows/master.yml)
 [![npm version](https://badge.fury.io/js/react-hotkey-tooltip.svg)](https://badge.fury.io/js/react-hotkey-tooltip)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d8820ba2-2f51-4aa9-be7a-b11e6b7b65ae/deploy-status)](https://app.netlify.com/sites/react-hotkey-tooltip-storybook/deploys)
 
 <div align="center">
-  <a href="https://emasuriano.github.io/react-hotkey-tooltip/">
+  <a href="https://react-hotkey-tooltip-storybook.netlify.app" alt="logo">
     <img alt="react-hotkey-tooltip logo" src="https://raw.githubusercontent.com/EmaSuriano/react-hotkey-tooltip/master/docs/logo.png" height="150px" />
   </a>
 </div>
@@ -14,7 +15,7 @@
   <strong>A global Hotkey provider with built in tooltip for React</strong>
 </div>
 
-## [Docs 📚](https://emasuriano.github.io/react-hotkey-tooltip)
+## [Docs 📚](https://react-hotkey-tooltip-storybook.netlify.app)
 
 ## Why you should use it?
 
@@ -62,7 +63,7 @@ const ClickableButtonByPressingA = () => (
 );
 ```
 
-For more examples please consider checking the [Docs](https://emasuriano.github.io/react-hotkey-tooltip) section.
+For more examples please consider checking the [Docs](https://react-hotkey-tooltip-storybook.netlify.app) section.
 
 ## License
 
