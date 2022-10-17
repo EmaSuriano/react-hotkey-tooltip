@@ -1,18 +1,18 @@
 import mousetrap from 'mousetrap';
 
-export type Handler = (event: Event) => void;
+export type Handler = (event: KeyboardEvent) => void;
 
 export const bindHoldCombination = (
   combination: string,
   cb: (pressed: boolean) => Handler,
 ) => {
-  mousetrap.bindGlobal(combination, cb(true), 'keydown');
-  mousetrap.bindGlobal(combination, cb(false), 'keyup');
+  mousetrap.bind(combination, cb(true), 'keydown');
+  mousetrap.bind(combination, cb(false), 'keyup');
   return;
 };
 
 export const bindCombination = (combination: string, cb: Handler) => {
-  mousetrap.bindGlobal(combination, cb);
+  mousetrap.bind(combination, cb);
   return;
 };
 

@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useRef } from 'react';
 import Tooltip from '@tippyjs/react';
 import 'mousetrap-global-bind';
-import HotKeyContext from '../HotkeyProvider/HotkeyContext';
-import { bindCombination, unbindCombination, Handler } from '../utils/events';
+import { bindCombination, unbindCombination, Handler } from './utils';
+import { HotkeyContext } from './HotkeyContext';
 
 export type Props = {
   /** Disabled all Hotkey and Tooltip */
@@ -26,15 +26,17 @@ function usePrevious<T>(value: T) {
 /**
  * Component responsible for positioning the tooltip in the application and calling the action
  */
-const Hotkey = ({ disabled, children, combination, onPress }: Props) => {
-  const { disabled: groupDisabled, showTooltip, tooltipOptions } = useContext(
-    HotKeyContext,
-  );
+export const Hotkey = ({ disabled, children, combination, onPress }: Props) => {
+  const {
+    disabled: groupDisabled,
+    showTooltip,
+    tooltipOptions,
+  } = useContext(HotkeyContext);
 
   const elementRef = useRef<HTMLElement>();
   const previousCombination = usePrevious(combination);
 
-  const onPressHotkey = (evt: Event) => {
+  const onPressHotkey = (evt: KeyboardEvent) => {
     if (disabled || groupDisabled) return;
 
     if (typeof onPress === 'function') return onPress(evt);
@@ -44,9 +46,11 @@ const Hotkey = ({ disabled, children, combination, onPress }: Props) => {
         typeof elementRef.current[onPress as keyof GlobalEventHandlers] ===
         'function'
       ) {
-        return (elementRef.current[onPress as keyof GlobalEventHandlers] as (
-          e: Event,
-        ) => void)(evt);
+        return (
+          elementRef.current[onPress as keyof GlobalEventHandlers] as (
+            e: Event,
+          ) => void
+        )(evt);
       }
 
       throw new Error(
@@ -82,5 +86,3 @@ const Hotkey = ({ disabled, children, combination, onPress }: Props) => {
     </Tooltip>
   );
 };
-
-export default Hotkey;

@@ -1,16 +1,14 @@
 import { createContext } from 'react';
 import { TippyProps } from '@tippyjs/react';
 
-export type HotKeyContext = {
+type Context = {
   showTooltip: boolean;
   disabled: boolean;
   tooltipOptions: TippyProps;
 };
 
-const HotKeyContext = createContext<HotKeyContext>({
+export const HotkeyContext = createContext<Context>({
   showTooltip: false,
   disabled: false,
   tooltipOptions: {},
 });
-
-export default HotKeyContext;

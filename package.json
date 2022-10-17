@@ -2,62 +2,50 @@
   "name": "react-hotkey-tooltip",
   "version": "0.0.0",
   "description": "React component that creates hotkeys for your components and shows a tooltip of it",
-  "main": "lib/index.js",
-  "module": "es/index.js",
-  "files": [
-    "es",
-    "lib"
-  ],
   "scripts": {
-    "build:esm": "rm -rf es && tsc -p tsconfig.es.json",
-    "build:lib": "rm -rf lib && tsc",
-    "build": "yarn build:lib & yarn build:esm",
-    "check-types": "tsc --noEmit",
-    "test": "jest",
-    "lint": "eslint ./src --ext tsx,ts",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
+    "test": "jest",
+    "lint": "eslint ./src --ext tsx,ts",
     "release": "npx semantic-release"
   },
   "dependencies": {
-    "@tippyjs/react": "^4.0.0-alpha.4",
-    "jest": "^26.6.3",
+    "@tippyjs/react": "^4.2.6",
     "mousetrap": "^1.6.5",
     "mousetrap-global-bind": "^1.1.0"
   },
   "peerDependencies": {
-    "react": "^16"
+    "react": "^16 | 17.*"
   },
   "devDependencies": {
-    "@babel/core": "^7.13.10",
-    "@babel/preset-env": "^7.13.10",
-    "@babel/preset-react": "^7.12.13",
-    "@babel/preset-typescript": "^7.13.0",
-    "@material-ui/core": "^4.9.8",
-    "@storybook/addon-info": "^5.3.18",
-    "@storybook/react": "^6.1.21",
-    "@testing-library/jest-dom": "^5.11.9",
-    "@testing-library/react": "^12.1.0",
-    "@types/jest": "^27.0.1",
-    "@types/mousetrap": "^1.6.3",
-    "@types/node": "^18.7.23",
-    "@types/react": "^17.0.3",
-    "@typescript-eslint/eslint-plugin": "^4.17.0",
-    "@typescript-eslint/parser": "^4.17.0",
-    "babel-jest": "^29.1.2",
-    "babel-loader": "^8.1.0",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-react-app": "^10.0.0",
-    "eslint": "^7.22.0",
+    "@babel/core": "^7.19.3",
+    "@material-ui/core": "^4.12.4",
+    "@storybook/addon-actions": "^6.5.12",
+    "@storybook/addon-essentials": "^6.5.12",
+    "@storybook/addon-interactions": "^6.5.12",
+    "@storybook/addon-links": "^6.5.12",
+    "@storybook/builder-vite": "^0.2.4",
+    "@storybook/react": "^6.5.12",
+    "@types/mousetrap": "^1.6.9",
+    "@types/react": "^18.0.17",
+    "@types/react-dom": "^18.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.40.0",
+    "@typescript-eslint/parser": "^5.40.0",
+    "@vitejs/plugin-react": "^2.1.0",
+    "babel-loader": "^8.2.5",
+    "eslint": "^8.25.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.14.2",
     "prettier": "^2.0.1",
     "prettier-eslint": "^15.0.1",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "typeface-roboto": "^1.1.13",
-    "typescript": "^4.0.2"
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "typescript": "^4.6.4",
+    "vite": "^3.1.0",
+    "vite-plugin-dts": "^1.6.6"
   },
   "author": "Ema Suriano",
   "homepage": "https://emasuriano.github.io/react-hotkey-tooltip",
@@ -69,9 +57,16 @@
     "tooltip",
     "shortcut"
   ],
-  "jest": {
-    "setupFilesAfterEnv": [
-      "<rootDir>/jest-setup.js"
-    ]
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/react-hotkey-tooltip.umd.js",
+  "module": "./dist/react-hotkey-tooltip.es.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/react-hotkey-tooltip.es.js",
+      "require": "./dist/react-hotkey-tooltip.umd.js"
+    }
   }
 }
