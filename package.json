@@ -57,11 +57,6 @@
     "tooltip",
     "shortcut"
   ],
-  "jest": {
-    "setupFilesAfterEnv": [
-      "<rootDir>/jest-setup.js"
-    ]
-  },
   "files": [
     "dist"
   ],
