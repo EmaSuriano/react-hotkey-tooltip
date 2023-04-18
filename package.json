@@ -5,8 +5,8 @@
   "scripts": {
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
+    "storybook": "NODE_OPTIONS=--openssl-legacy-provider start-storybook",
+    "build-storybook": "NODE_OPTIONS=--openssl-legacy-provider build-storybook",
     "test": "jest",
     "lint": "eslint ./src --ext tsx,ts",
     "prerelease": "yarn build",

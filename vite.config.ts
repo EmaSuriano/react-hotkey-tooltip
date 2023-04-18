@@ -5,10 +5,10 @@ import dts from 'vite-plugin-dts';
 
 export default defineConfig({
   plugins: [
-    react(),
     dts({
       insertTypesEntry: true,
     }),
+    react(),
   ],
   build: {
     sourcemap: true,

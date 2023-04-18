@@ -1,9 +1,6 @@
-name: Pr Checker
+name: pull-request
 
-on:
-  pull_request:
-    branches:
-      - master
+on: [pull_request]
 
 jobs:
   build:
@@ -18,18 +15,6 @@ jobs:
 
       - run: yarn install --frozen-lockfile
 
-      - run: yarn build
-
-  lint:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v3
-
-      - uses: actions/setup-node@v3
-        with:
-          node-version-file: '.nvmrc'
-
-      - run: yarn install --frozen-lockfile
-
       - run: yarn lint
+
+      - run: yarn build
